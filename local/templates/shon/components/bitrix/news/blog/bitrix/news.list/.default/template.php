@@ -12,75 +12,57 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="news-list">
-<?if($arParams["DISPLAY_TOP_PAGER"]):?>
-	<?=$arResult["NAV_STRING"]?><br />
-<?endif;?>
+<div class="col-xs-12 col-sm-8 wow fadeInLeft" data-wow-delay="0.4s">
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+	$dateCreate = CIBlockFormatProperties::DateFormat(
+        'j M Y', 
+        MakeTimeStamp(
+            $arItem["TIMESTAMP_X"], 
+            CSite::GetDateFormat()
+        )
+	);
+	$res = CIBlockSection::GetByID($arItem["IBLOCK_SECTION_ID"]);
+	if($ar_res = $res->GetNext())
 	?>
-	<p class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
-				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
-						class="preview_picture"
-						border="0"
-						src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-						width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-						height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-						style="float:left"
-						/></a>
-			<?else:?>
-				<img
-					class="preview_picture"
-					border="0"
-					src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-					width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-					height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-					alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-					title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-					style="float:left"
-					/>
-			<?endif;?>
-		<?endif?>
-		<?if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]):?>
-			<span class="news-date-time"><?echo $arItem["DISPLAY_ACTIVE_FROM"]?></span>
-		<?endif?>
-		<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
-			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
-				<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><b><?echo $arItem["NAME"]?></b></a><br />
-			<?else:?>
-				<b><?echo $arItem["NAME"]?></b><br />
-			<?endif;?>
-		<?endif;?>
-		<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
-			<?echo $arItem["PREVIEW_TEXT"];?>
-		<?endif;?>
-		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-			<div style="clear:both"></div>
-		<?endif?>
-		<?foreach($arItem["FIELDS"] as $code=>$value):?>
-			<small>
-			<?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?>
-			</small><br />
-		<?endforeach;?>
-		<?foreach($arItem["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
-			<small>
-			<?=$arProperty["NAME"]?>:&nbsp;
-			<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-				<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-			<?else:?>
-				<?=$arProperty["DISPLAY_VALUE"];?>
-			<?endif?>
-			</small><br />
-		<?endforeach;?>
-	</p>
+	<!-- Blog Post of the Page -->
+	<article class="blog-post" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+		<div class="img-holder">
+			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+			<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
+				alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" />
+			</a>
+		</div>
+		<time class="time" datetime="<?echo $arItem["TIMESTAMP_X"]?>"><?echo $dateCreate;?></time>
+		<div class="blog-txt">
+		<h2><a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><?echo $arItem["NAME"]?></a></h2>
+		<ul class="list-unstyled blog-nav">
+			<li> <i class="fa fa-clock-o"></i><?echo $dateCreate;?></li>
+			<li> <a href="/blog/<? echo $ar_res['CODE']; ?>/"><i class="fa fa-list"></i><? echo $ar_res['NAME']; ?></a></li>
+			<li> 
+				<i class="fa fa-comment"></i>
+				<?if (strlen($arItem['DISPLAY_PROPERTIES']['FORUM_MESSAGE_CNT']['VALUE'])>0):?>
+					Число комментариев: <?echo $arItem['DISPLAY_PROPERTIES']['FORUM_MESSAGE_CNT']['VALUE'];?>
+				<?else:?>
+					Число комментариев: 0
+				<?endif;?>
+			</li>
+		</ul>
+		<p><?echo $arItem["PREVIEW_TEXT"];?></p>
+		<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>" class="btn-more"><?=GetMessage("BLOG_READ_MORE")?></a>
+		</div>
+	</article>
+	<!-- Blog Post of the Page end -->	
 <?endforeach;?>
-<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<br /><?=$arResult["NAV_STRING"]?>
-<?endif;?>
+
+
+	<!-- Btn Holder of the Page -->
+	<div class="btn-holder">
+	<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+		<?=$arResult["NAV_STRING"]?>
+	<?endif;?>
+	</div>
+	<!-- Btn Holder of the Page end -->
 </div>

@@ -9552,7 +9552,7 @@ a:hover {
 	font-size: 14px;
 	line-height: 16px;
 	font-style: italic;
-	font-weight: 200;
+	font-weight: 400;
 	margin: 0 0 32px;
 	overflow: hidden;
 	padding: 0 0 0 2px;
@@ -11239,7 +11239,7 @@ a:hover {
 }
 
 .mt-contact-banner .breadcrumbs ul .fa-angle-right {
-	margin: 0 0 0 5px;
+	margin: 0 5px 0 0;
 }
 
 .mt-contact-banner .search {

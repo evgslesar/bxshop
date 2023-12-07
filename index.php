@@ -83,7 +83,7 @@ $APPLICATION->SetTitle('Главная');
                 </div><!-- banner frame end here -->
                 <?php */ ?>
                 <!-- banner frame start here -->
-                <div class="banner-frame mt-paddingsmzero">
+                <div class="banner-frame toppadding-zero">
                     <!-- banner box third start here -->
                     <div class="banner-box third">
                         <!-- banner 12 right white start here -->
@@ -603,164 +603,124 @@ $APPLICATION->SetTitle('Главная');
                         ),
                         false
                     );?>
-                    <!-- tabs slider start here -->
-                    <?php /*
-                    <div class="tabs-slider">
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1  start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img src="http://placehold.it/215x215" alt="image description"></a>
-                                            <span class="caption">
-                                                <span class="new">new</span>
-                                            </span>
-                                            <ul class="mt-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Puff Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>287,00</span></span>
-                                </div>
-                            </div><!-- mt product1  end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img src="http://placehold.it/215x215" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Bombi Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>399,00</span></span>
-                                </div>
-                            </div><!-- mt product1 center end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img src="http://placehold.it/215x215" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Wood Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>198,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img src="http://placehold.it/215x215" alt="image description"></a>
-                                            <span class="caption">
-                                                <span class="off">15% Off</span>
-                                                <span class="new">new</span>
-                                            </span>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Bombi Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>200,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img src="http://placehold.it/215x215" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Bombi Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>200,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
-                        <!-- slide start here -->
-                        <div class="slide">
-                            <!-- mt product1 start here -->
-                            <div class="mt-product1">
-                                <div class="box">
-                                    <div class="b1">
-                                        <div class="b2">
-                                            <a href="product-detail.html"><img src="http://placehold.it/215x215" alt="image description"></a>
-                                            <ul class="links">
-                                                <li><a href="#"><i class="icon-handbag"></i><span>Add to Cart</span></a></li>
-                                                <li><a href="#"><i class="icomoon icon-heart-empty"></i></a></li>
-                                                <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="txt">
-                                    <strong class="title"><a href="product-detail.html">Wood Chair</a></strong>
-                                    <span class="price"><i class="fa fa-eur"></i> <span>198,00</span></span>
-                                </div>
-                            </div><!-- mt product1 end here -->
-                        </div>
-                        <!-- slide end here -->
-                    </div>
-                    <!-- tabs slider end here -->
-                    */ ?>
                 </div><!-- mt producttabs style3 end here -->
+                <!-- Mt Blog Detail of the Page -->
+                <div class="mt-blog-detail style1">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-8 wow fadeInLeft" data-wow-delay="0.4s">
+                        <!-- Blog Post of the Page -->
+                        <article class="blog-post style2">
+                        <div class="img-holder">
+                            <a href="blog-post-detail-sidebar.html"><img src="http://placehold.it/280x170" alt="image description"></a>
+                            <ul class="list-unstyled comment-nav">
+                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
+                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
+                            </ul>
+                        </div>
+                        <div class="blog-txt">
+                            <h2><a href="blog-post-detail-sidebar.html">IDEAS FOR LIVING ROOMS</a></h2>
+                            <ul class="list-unstyled blog-nav">
+                            <li> <a href="#"><i class="fa fa-clock-o"></i>20 April 2015</a></li>
+                            <li> <a href="#"><i class="fa fa-list"></i>Design</a></li>
+                            <li> <a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>
+                            </ul>
+                            <p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut. Vestibulum sit amet metus euismod, condimentum lectus id, ultrices sem. </p>
+                            <a href="blog-post-detail-sidebar.html" class="btn-more">Read More</a>
+                        </div>
+                        </article>
+                        <!-- Blog Post of the Page end -->
+                        <!-- Blog Post of the Page -->
+                        <article class="blog-post style2">
+                        <div class="img-holder">
+                            <a href="blog-post-detail-sidebar.html"><img src="http://placehold.it/280x170" alt="image description"></a>
+                            <ul class="list-unstyled comment-nav">
+                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
+                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
+                            </ul>
+                        </div>
+                        <div class="blog-txt">
+                            <h2><a href="blog-post-detail-sidebar.html">IDEAS FOR LIVING ROOMS</a></h2>
+                            <ul class="list-unstyled blog-nav">
+                            <li> <a href="#"><i class="fa fa-clock-o"></i>20 April 2015</a></li>
+                            <li> <a href="#"><i class="fa fa-list"></i>Design</a></li>
+                            <li> <a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>
+                            </ul>
+                            <p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut. Vestibulum sit amet metus euismod, condimentum lectus id, ultrices sem. </p>
+                            <a href="blog-post-detail-sidebar.html" class="btn-more">Read More</a>
+                        </div>
+                        </article>
+                        <!-- Blog Post of the Page end -->
+                        <!-- Blog Post of the Page -->
+                        <article class="blog-post style2">
+                        <div class="img-holder">
+                            <a href="blog-post-detail-sidebar.html"><img src="http://placehold.it/280x170" alt="image description"></a>
+                            <ul class="list-unstyled comment-nav">
+                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
+                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
+                            </ul>
+                        </div>
+                        <div class="blog-txt">
+                            <h2><a href="blog-post-detail-sidebar.html">IDEAS FOR LIVING ROOMS</a></h2>
+                            <ul class="list-unstyled blog-nav">
+                            <li> <a href="#"><i class="fa fa-clock-o"></i>20 April 2015</a></li>
+                            <li> <a href="#"><i class="fa fa-list"></i>Design</a></li>
+                            <li> <a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>
+                            </ul>
+                            <p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut. Vestibulum sit amet metus euismod, condimentum lectus id, ultrices sem. </p>
+                            <a href="blog-post-detail-sidebar.html" class="btn-more">Read More</a>
+                        </div>
+                        </article>
+                        <!-- Blog Post of the Page end -->
+                    </div>
+                    <div class="col-xs-12 col-sm-4 text-right sidebar wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="banner-frame toppadding-zero">
+                            <div class="banner-box two">
+                                <!-- banner 7 right start here -->
+                                <div class="banner-7 right wow fadeInUp" data-wow-delay="0.4s">
+                                    <img src="http://placehold.it/295x275" alt="image description">
+                                    <div class="holder">
+                                        <h2><strong>ACRYLIC FABRIC <br>BEAN BAG</strong></h2>
+                                        <ul class="mt-stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star-o"></i></li>
+                                        </ul>
+                                        <div class="price-tag">
+                                            <span class="price">$ 99.00</span>
+                                            <a class="shop-now" href="product-detail.html">SHOP NOW</a>
+                                        </div>
+                                    </div>
+                                </div><!-- banner 7 right end here -->
+                                <!-- banner 8 start here -->
+                                <div class="banner-8 wow fadeInDown" data-wow-delay="0.4s">
+                                    <img src="http://placehold.it/295x275" alt="image description">
+                                    <div class="holder">
+                                        <h2><strong>CHAIR WITH <br>ARMRESTS</strong></h2>
+                                        <ul class="mt-stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star-o"></i></li>
+                                        </ul>
+                                        <div class="price-tag">
+                                            <span class="price-off">$ 129.00</span>
+                                            <span class="price">$ 99.00</span>
+                                            <a class="btn-shop" href="product-detail.html">
+                                                <span>HURRY UP!</span> 
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div><!-- banner 8 start here -->
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Mt Blog Detail of the Page end -->
                 <!-- mt patners start here -->
                 <div class="mt-patners wow fadeInUp" data-wow-delay="0.4s">
                     <h2 class="heading">BRANDS <span>FURNITURE</span></h2>
