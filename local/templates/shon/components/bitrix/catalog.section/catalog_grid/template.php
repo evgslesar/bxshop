@@ -119,16 +119,6 @@ $arParams['MESS_BTN_LAZY_LOAD'] = $arParams['MESS_BTN_LAZY_LOAD'] ?: Loc::getMes
 $obName = 'ob'.preg_replace('/[^a-zA-Z0-9_]/', 'x', $this->GetEditAreaId($navParams['NavNum']));
 $containerName = 'container-'.$navParams['NavNum'];
 
-if ($showTopPager)
-{
-	?>
-	<div data-pagination-num="<?=$navParams['NavNum']?>">
-		<!-- pagination-container -->
-		<?=$arResult['NAV_STRING']?>
-		<!-- pagination-container -->
-	</div>
-	<?
-}
 
 if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 {
@@ -139,8 +129,8 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 	<?
 }
 ?>
-
-<div class="catalog-section bx-<?=$arParams['TEMPLATE_THEME']?>" data-entity="<?=$containerName?>">
+<? echo $GLOBALS["sortirovka"]; ?>
+<div class="update_ajax_filter catalog-section bx-<?=$arParams['TEMPLATE_THEME']?>" data-entity="<?=$containerName?>">
 	<?
 	if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
 	{

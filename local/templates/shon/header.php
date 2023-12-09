@@ -66,8 +66,27 @@ $CurUri = $APPLICATION->GetCurUri();
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 hidden-xs">
-								<span class="tel active"> <i class="fa fa-phone" aria-hidden="true"></i> +1 (555) 333 22 11</span>
-								<a class="tel" href="#"> <i class="fa fa-envelope-o" aria-hidden="true"></i> info@schon.chairs</a>
+								<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/header-phone.php"
+									)
+								);?>
+
+								<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/header-email.php"
+									)
+								);?>
 							</div>
 							<div class="col-xs-12 col-sm-6 text-right">
 							<?$APPLICATION->IncludeComponent(

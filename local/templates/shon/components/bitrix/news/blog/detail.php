@@ -16,6 +16,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
+?>
+<div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s">
+<?php
 $ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
@@ -150,6 +153,7 @@ $ElementID = $APPLICATION->IncludeComponent(
 		<?endforeach?>
 	<?endif?>
 <?endif?>
+
 <?if($arParams["USE_REVIEW"]=="Y" && IsModuleInstalled("forum") && $ElementID):?>
 <hr />
 <?$APPLICATION->IncludeComponent(
@@ -173,4 +177,55 @@ $ElementID = $APPLICATION->IncludeComponent(
 	$component,
 	['HIDE_ICONS' => 'Y']
 );?>
-<?endif;
+<?endif;?>
+	<!-- Mt Comments Section of the Page -->
+	<div class="mt-comments-section">
+		<div class="mt-comments-heading">
+		<h2>COMMENTS</h2>
+		</div>
+		<ul class="list-unstyled">
+		<li>
+			<div class="img-box">
+			<img src="http://placehold.it/70x70" alt="image description">
+			</div>
+			<div class="txt">
+			<h3><a href="#">John Wick</a></h3>
+			<time class="mt-time" datetime="2016-02-03 20:00">May 24, 2015</time>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
+			</div>
+		</li>
+		<li class="second-comment">
+			<div class="img-box">
+			<img src="http://placehold.it/70x70" alt="image description">
+			</div>
+			<div class="txt">
+			<h3><a href="#">John Wick</a></h3>
+			<time class="mt-time" datetime="2016-02-03 20:00">May 24, 2015</time>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit i</p>
+			</div>
+		</li>
+		</ul>
+		<!-- Mt Leave Comments of the Page -->
+		<div class="mt-leave-comment">
+		<h2>LEAVE A COMMENT</h2>
+		<form action="#" class="comment-form">
+			<fieldset>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Name">
+				<input type="email" class="form-control" placeholder="Email">
+				<input type="text" class="form-control" placeholder="Website">
+			</div>
+			<div class="form-group">
+				<textarea placeholder="Message"></textarea>
+			</div>
+			<button type="submit" class="form-btn">Submit</button>
+			</fieldset>
+		</form>
+		</div>
+		<!-- Mt Leave Comments of the Page end -->
+	</div>
+	<!-- Mt Comments Section of the Page end -->
+
+
+</div>
+

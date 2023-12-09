@@ -1,0 +1,1 @@
+<a class="tel" href="mailto:info@schon.chairs"> <i class="fa fa-envelope-o" aria-hidden="true"></i> info@schon.chairs</a>

@@ -153,8 +153,9 @@ function initSlickSlider() {
 	});
 	jQuery('.patner-slider').slick({
 		autoplay: true,
-		slidesToShow: 6,
+		slidesToShow: 5,
 		slidesToScroll: 1,
+		infinite: true,		
 		adaptiveHeight: true,
 		responsive: [
 			{

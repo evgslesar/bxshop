@@ -17,7 +17,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 // $this->addExternalCss("/bitrix/css/main/bootstrap.css");
  
-
 if (!isset($arParams['FILTER_VIEW_MODE']) || (string)$arParams['FILTER_VIEW_MODE'] == '')
 	$arParams['FILTER_VIEW_MODE'] = 'VERTICAL';
 $arParams['USE_FILTER'] = (isset($arParams['USE_FILTER']) && $arParams['USE_FILTER'] == 'Y' ? 'Y' : 'N');
@@ -33,46 +32,42 @@ else
 }
 
 ?>
+
 <div class="col-md-3 col-sm-4 col-sm-push-8 col-md-push-9">
 	<div class="bx-sidebar-block">
-	<?$APPLICATION->IncludeComponent(
-			"bitrix:catalog.smart.filter",
-			"",
-			Array(
-				"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-				"CACHE_TIME" => $arParams["CACHE_TIME"],
-				"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-				"CONVERT_CURRENCY" => "N",
-				"DISPLAY_ELEMENT_COUNT" => "Y",
-				"FILTER_NAME" => "arrFilter",
-				// "FILTER_NAME" => $arParams["FILTER_NAME"],
-				"FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],
-				"HIDE_NOT_AVAILABLE" => $arParams["HIDE_NOT_AVAILABLE"],
-				"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-				"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-				"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+		<?
+        $APPLICATION->IncludeComponent(
+            "bitrix:catalog.smart.filter",
+            "smart.mobile.filter",
+            array(
+                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],    // Тип инфоблока
+                "IBLOCK_ID" => $arParams["IBLOCK_ID"],    // Инфоблок
+                "SECTION_ID" => $arCurSection["ID"],    // ID раздела инфоблока
+                "FILTER_NAME" => $arParams["FILTER_NAME"],    // Имя выходящего массива для фильтрации
+                "PRICE_CODE" => $arParams["~PRICE_CODE"],    // Тип цены
+                "CACHE_TYPE" => $arParams["CACHE_TYPE"],    // Тип кеширования
+                "CACHE_TIME" => $arParams["CACHE_TIME"],    // Время кеширования (сек.)
+                "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],    // Учитывать права доступа
+                "SAVE_IN_SESSION" => "N",    // Сохранять установки фильтра в сессии пользователя
+                "FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],    // Вид отображения
+                "XML_EXPORT" => "N",    // Включить поддержку Яндекс Островов
+                "SECTION_TITLE" => "NAME",    // Заголовок
+                "SECTION_DESCRIPTION" => "DESCRIPTION",    // Описание
+                "HIDE_NOT_AVAILABLE" => $arParams["HIDE_NOT_AVAILABLE"],    // Не отображать недоступные товары
+                "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],    // Цветовая тема
+                "CONVERT_CURRENCY" => $arParams["CONVERT_CURRENCY"],    // Показывать цены в одной валюте
+                "CURRENCY_ID" => $arParams["CURRENCY_ID"],
+                "SEF_MODE" => 'N',    // Включить поддержку ЧПУ
+                "SEF_RULE" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["smart_filter"],    // Правило для обработки
+                "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
+                "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],    // Имя массива с переменными для построения ссылок в постраничной навигации
+                "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
 				"POPUP_POSITION" => "left",
-				"PREFILTER_NAME" => "smartPreFilter",
-				"PRICE_CODE" => $arParams["~PRICE_CODE"],
-				"SAVE_IN_SESSION" => "N",
-				"SECTION_CODE" => "",
-				"SECTION_CODE_PATH" => "",
-				"SECTION_DESCRIPTION" => "-",
-				"SECTION_ID" => "",
-				"SECTION_TITLE" => "-",
-				"SEF_MODE" => $arParams["SEF_MODE"],
-				"SEF_RULE" => "",
-		 		// "SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
-				"SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
-				"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
-				"XML_EXPORT" => "N",
-				'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
-				'CURRENCY_ID' => $arParams['CURRENCY_ID'],
-				"INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
-			),
-			$component,
-			array('HIDE_ICONS' => 'Y')
-		);?>
+            ),
+            $component,
+            array('HIDE_ICONS' => 'Y')
+        );
+        ?>
 	</div>
 	<div class="hidden-xs">
 		<?
@@ -103,7 +98,8 @@ else
 				"CACHE_TIME" => $arParams["CACHE_TIME"],
 				"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
 				"COUNT_ELEMENTS" => $arParams["SECTION_COUNT_ELEMENTS"],
-				"TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
+				// "TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
+				"TOP_DEPTH" => 1,
 				"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
 				"VIEW_MODE" => $arParams["SECTIONS_VIEW_MODE"],
 				"SHOW_PARENT_NAME" => $arParams["SECTIONS_SHOW_PARENT_NAME"],
@@ -120,34 +116,58 @@ else
 			}
 			$APPLICATION->IncludeComponent(
 				"bitrix:catalog.section.list",
-				"",
+				"list_with_pictures",
 				$sectionListParams,
 				$component,
 				($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? array("HIDE_ICONS" => "Y") : array())
 			);
 			unset($sectionListParams);
 			
-			// if ($arParams["USE_COMPARE"] === "Y")
-			// {
-			// 	$APPLICATION->IncludeComponent(
-			// 		"bitrix:catalog.compare.list",
-			// 		"",
-			// 		array(
-			// 			"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-			// 			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-			// 			"NAME" => $arParams["COMPARE_NAME"],
-			// 			"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
-			// 			"COMPARE_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["compare"],
-			// 			"ACTION_VARIABLE" => (!empty($arParams["ACTION_VARIABLE"]) ? $arParams["ACTION_VARIABLE"] : "action"),
-			// 			"PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
-			// 			'POSITION_FIXED' => $arParams['COMPARE_POSITION_FIXED'] ?? '',
-			// 			'POSITION' => $arParams['COMPARE_POSITION'] ?? ''
-			// 		),
-			// 		$component,
-			// 		array("HIDE_ICONS" => "Y")
-			// 	);
-			// }
-
+			if ($arParams["USE_COMPARE"] === "Y")
+			{
+				$APPLICATION->IncludeComponent(
+					"bitrix:catalog.compare.list",
+					"",
+					array(
+						"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+						"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+						"NAME" => $arParams["COMPARE_NAME"],
+						"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
+						"COMPARE_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["compare"],
+						"ACTION_VARIABLE" => (!empty($arParams["ACTION_VARIABLE"]) ? $arParams["ACTION_VARIABLE"] : "action"),
+						"PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
+						'POSITION_FIXED' => $arParams['COMPARE_POSITION_FIXED'] ?? '',
+						'POSITION' => $arParams['COMPARE_POSITION'] ?? ''
+					),
+					$component,
+					array("HIDE_ICONS" => "Y")
+				);
+			}
+			/*?>
+			<form class="sortline" method="post" action="/local/ajax/sort.php">
+			Сортировать по:
+			<select name="sortten">
+				<option value="show_counter"<? echo $_COOKIE['sortten'] === 'show_counter' ? ' selected' : ' '; ?>>
+				Просмотрам
+				</option>
+				<option value="name"<? echo $_COOKIE['sortten'] === 'name' ? ' selected' : ' '; ?>>
+				Алфавиту
+				</option>
+				<option value="BASE_PRICE"<? echo $_COOKIE['sortten'] === 'BASE_PRICE' ? ' selected' : ' '; ?>>
+				Цене
+				</option>
+			</select>
+			</form>
+			<?*/
+			?>
+			<?
+            // if (
+            //     (!empty($_COOKIE['sortten']))
+            // ) {
+            //     $sort = $_COOKIE['sortten'];
+            // } else {
+            //     $sort = $arParams["ELEMENT_SORT_FIELD"];
+            // }
 
 			$intSectionID = $APPLICATION->IncludeComponent(
 				"bitrix:catalog.section",
@@ -155,6 +175,10 @@ else
 				array(
 					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+										
+					// "ELEMENT_SORT_FIELD" => $sort,
+					// "ELEMENT_SORT_ORDER" => ($_COOKIE['sortten'] === 'show_counter') ? 'desc' : 'asc',
+
 					"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
 					"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
 					"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
@@ -219,14 +243,15 @@ else
 					"OFFERS_SORT_ORDER2" => $arParams["OFFERS_SORT_ORDER2"],
 					"OFFERS_LIMIT" => (isset($arParams["LIST_OFFERS_LIMIT"]) ? $arParams["LIST_OFFERS_LIMIT"] : 0),
 
-					"SECTION_CODE" => "",
-					"SECTION_CODE_PATH" => "",
-					"SECTION_ID" => "",
-					"SECTION_URL" => "#SITE_DIR#/catalog/#SECTION_CODE_PATH#/",
+					// "SECTION_CODE" => "",
+					// "SECTION_CODE_PATH" => "",
+					// "SECTION_ID" => "",
+					// "SECTION_URL" => "#SITE_DIR#/catalog/#SECTION_CODE_PATH#/",
 
-					// "SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
-					// "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
-					// "SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
+					"SHOW_ALL_WO_SECTION" => "Y",
+					"SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
+					"SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+					"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
 					"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
 					"USE_MAIN_ELEMENT_SECTION" => $arParams["USE_MAIN_ELEMENT_SECTION"],
 					'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
@@ -279,7 +304,7 @@ else
 					'USE_COMPARE_LIST' => 'Y',
 					'BACKGROUND_IMAGE' => (isset($arParams['SECTION_BACKGROUND_IMAGE']) ? $arParams['SECTION_BACKGROUND_IMAGE'] : ''),
 					'COMPATIBLE_MODE' => (isset($arParams['COMPATIBLE_MODE']) ? $arParams['COMPATIBLE_MODE'] : ''),
-					'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : '')
+					'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
 				),
 				$component
 			);

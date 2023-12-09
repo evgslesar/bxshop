@@ -192,7 +192,7 @@ $arUrlRewrite=array (
     'PATH' => '/test/lp/index.php',
     'SORT' => 100,
   ),
-  32 => 
+  34 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',

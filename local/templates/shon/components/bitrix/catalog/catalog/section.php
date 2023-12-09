@@ -88,38 +88,38 @@ else
 <div class="col-md-3 col-sm-4 col-sm-push-8 col-md-push-9">
 	<div class="bx-sidebar-block">
 		<?
-		$APPLICATION->IncludeComponent(
-			"bitrix:catalog.smart.filter",
-			"",
-			array(
-				"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-				"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-				"SECTION_ID" => $arCurSection['ID'],
-				"FILTER_NAME" => $arParams["FILTER_NAME"],
-				"PRICE_CODE" => $arParams["~PRICE_CODE"],
-				"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-				"CACHE_TIME" => $arParams["CACHE_TIME"],
-				"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-				"SAVE_IN_SESSION" => "N",
-				"FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],
-				"XML_EXPORT" => "N",
-				"SECTION_TITLE" => "NAME",
-				"SECTION_DESCRIPTION" => "DESCRIPTION",
-				'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
-				"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
-				'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
-				'CURRENCY_ID' => $arParams['CURRENCY_ID'],
-				"SEF_MODE" => $arParams["SEF_MODE"],
-				"SEF_RULE" => "",
-				// "SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
-				"SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
-				"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-				"INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
-			),
-			$component,
-			array('HIDE_ICONS' => 'Y')
-		);
-		?>
+        $APPLICATION->IncludeComponent(
+            "bitrix:catalog.smart.filter",
+            "smart.mobile.filter",
+            array(
+                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],    // Тип инфоблока
+                "IBLOCK_ID" => $arParams["IBLOCK_ID"],    // Инфоблок
+                "SECTION_ID" => $arCurSection["ID"],    // ID раздела инфоблока
+                "FILTER_NAME" => $arParams["FILTER_NAME"],    // Имя выходящего массива для фильтрации
+                "PRICE_CODE" => $arParams["~PRICE_CODE"],    // Тип цены
+                "CACHE_TYPE" => $arParams["CACHE_TYPE"],    // Тип кеширования
+                "CACHE_TIME" => $arParams["CACHE_TIME"],    // Время кеширования (сек.)
+                "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],    // Учитывать права доступа
+                "SAVE_IN_SESSION" => "N",    // Сохранять установки фильтра в сессии пользователя
+                "FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],    // Вид отображения
+                "XML_EXPORT" => "N",    // Включить поддержку Яндекс Островов
+                "SECTION_TITLE" => "NAME",    // Заголовок
+                "SECTION_DESCRIPTION" => "DESCRIPTION",    // Описание
+                "HIDE_NOT_AVAILABLE" => $arParams["HIDE_NOT_AVAILABLE"],    // Не отображать недоступные товары
+                "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],    // Цветовая тема
+                "CONVERT_CURRENCY" => $arParams["CONVERT_CURRENCY"],    // Показывать цены в одной валюте
+                "CURRENCY_ID" => $arParams["CURRENCY_ID"],
+                "SEF_MODE" => 'N',    // Включить поддержку ЧПУ
+                "SEF_RULE" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["smart_filter"],    // Правило для обработки
+                "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
+                "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],    // Имя массива с переменными для построения ссылок в постраничной навигации
+                "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+				"POPUP_POSITION" => "left",
+            ),
+            $component,
+            array('HIDE_ICONS' => 'Y')
+        );
+        ?>
 	</div>
 	<div class="hidden-xs">
 		<?
@@ -169,7 +169,7 @@ else
 			}
 			$APPLICATION->IncludeComponent(
 				"bitrix:catalog.section.list",
-				"",
+				"list_with_pictures",
 				$sectionListParams,
 				$component,
 				array("HIDE_ICONS" => "Y")
@@ -196,13 +196,68 @@ else
 					array("HIDE_ICONS" => "Y")
 				);
 			}
-
+			/*?>
+			<form class="sortline" method="post" action="/local/ajax/sort.php">
+			Сортировать по:
+			<select name="sortten">
+				<option value="show_counter"<? echo $_COOKIE['sortten'] === 'show_counter' ? ' selected' : ' '; ?>>
+				Просмотрам
+				</option>
+				<option value="name"<? echo $_COOKIE['sortten'] === 'name' ? ' selected' : ' '; ?>>
+				Алфавиту
+				</option>
+				<option value="SCALED_PRICE_2"<? echo $_COOKIE['sortten'] === 'SCALED_PRICE_2' ? ' selected' : ' '; ?>>
+				Цене
+				</option>
+			</select>
+			</form>
+			<?$APPLICATION->IncludeComponent(
+	"codeblogpro:sort.panel", 
+	".default", 
+	array(
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"FIELDS_CODE" => array(
+			0 => "name",
+			1 => "show_counter",
+			2 => "created",
+		),
+		"IBLOCK_ID" => "5",
+		"IBLOCK_TYPE" => "catalog",
+		"INCLUDE_SORT_TO_SESSION" => "Y",
+		"ORDER_NAME" => "ORDER",
+		"PRICE_CODE" => array(
+			0 => "1",
+		),
+		"PROPERTY_CODE" => array(
+		),
+		"SORT_NAME" => "SORT",
+		"SORT_ORDER" => array(
+			0 => "asc",
+			1 => "desc",
+		),
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);*/?>
+			<?
+			// if (
+            //     (!empty($_COOKIE['sortten']))
+            // ) {
+            //     $sort = $_COOKIE['sortten'];
+            // } else {
+            //     $sort = $arParams["ELEMENT_SORT_FIELD"];
+            // }
 			$intSectionID = $APPLICATION->IncludeComponent(
 				"bitrix:catalog.section",
 				"catalog_grid",
 				array(
 					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+										
+					// "ELEMENT_SORT_FIELD" => $sort,
+					// "ELEMENT_SORT_ORDER" => ($_COOKIE['sortten'] === 'show_counter') ? 'desc' : 'asc',
+
 					"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
 					"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
 					"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
@@ -322,7 +377,7 @@ else
 					'USE_COMPARE_LIST' => 'Y',
 					'BACKGROUND_IMAGE' => (isset($arParams['SECTION_BACKGROUND_IMAGE']) ? $arParams['SECTION_BACKGROUND_IMAGE'] : ''),
 					'COMPATIBLE_MODE' => (isset($arParams['COMPATIBLE_MODE']) ? $arParams['COMPATIBLE_MODE'] : ''),
-					'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : '')
+					'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
 				),
 				$component
 			);

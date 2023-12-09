@@ -11,7 +11,7 @@
 		"SECTION_PAGE_URL" => "#SECTION_CODE_PATH#/", 
 		"DETAIL_PAGE_URL" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/", 
 		"IBLOCK_TYPE" => "catalog", 
-		"IBLOCK_ID" => "1", 
+		"IBLOCK_ID" => "5", 
 		"DEPTH_LEVEL" => "1", 
 		"CACHE_TYPE" => "A", 
 		"CACHE_TIME" => "3600" 

@@ -5,13 +5,36 @@ $APPLICATION->SetTitle("Каталог");
 <!-- mt main start here -->
 <main id="mt-main">
     <div class="container">
+	<?
+		ob_start (); // добавлена строка
+		$APPLICATION->IncludeComponent(
+			"codeblogpro:sort.panel",
+			"",
+			Array(
+				"CACHE_TIME" => "3600",
+				"CACHE_TYPE" => "A",
+				"FIELDS_CODE" => array("name", "show_counter", "created"),
+				"IBLOCK_ID" => "5",
+				"IBLOCK_TYPE" => "catalog",
+				"INCLUDE_SORT_TO_SESSION" => "Y",
+				"ORDER_NAME" => "ORDER",
+				"PRICE_CODE" => array("1"),
+				"PROPERTY_CODE" => array(),
+				"SORT_NAME" => "SORT",
+				"SORT_ORDER" => array("asc", "desc")
+			)
+		);
+		$GLOBALS["sortirovka"] = ob_get_contents();  // добавлена строка
+		ob_end_clean(); // добавлена строка
+		?>
+
 		<?$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
 	"catalog", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
-		"ADD_PICT_PROP" => "MORE_PHOTO",
+		"ADD_PICT_PROP" => "-",
 		"ADD_PROPERTIES_TO_BASKET" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -71,10 +94,10 @@ $APPLICATION->SetTitle("Каталог");
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"ELEMENT_SORT_FIELD" => "sort",
-		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER" => "asc",
-		"ELEMENT_SORT_ORDER2" => "desc",
+		"ELEMENT_SORT_FIELD" => $SORT,
+		"ELEMENT_SORT_FIELD2" => "",
+		"ELEMENT_SORT_ORDER" => $ORDER,
+		"ELEMENT_SORT_ORDER2" => "",
 		"FILE_404" => "",
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"FILTER_NAME" => "arrFilter",
@@ -97,10 +120,10 @@ $APPLICATION->SetTitle("Каталог");
 		"GIFTS_SHOW_OLD_PRICE" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "1",
+		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"INSTANT_RELOAD" => "N",
+		"INSTANT_RELOAD" => "Y",
 		"LABEL_PROP" => array(
 		),
 		"LAZY_LOAD" => "N",
@@ -168,7 +191,7 @@ $APPLICATION->SetTitle("Каталог");
 		"SEARCH_USE_SEARCH_RESULT_ORDER" => "N",
 		"SECTIONS_HIDE_SECTION_NAME" => "N",
 		"SECTIONS_SHOW_PARENT_NAME" => "Y",
-		"SECTIONS_VIEW_MODE" => "TILE",
+		"SECTIONS_VIEW_MODE" => "LIST",
 		"SECTION_ADD_TO_BASKET_ACTION" => "ADD",
 		"SECTION_BACKGROUND_IMAGE" => "-",
 		"SECTION_COUNT_ELEMENTS" => "Y",
@@ -209,8 +232,8 @@ $APPLICATION->SetTitle("Каталог");
 		"TOP_SLIDER_INTERVAL" => "3000",
 		"TOP_SLIDER_PROGRESS" => "N",
 		"TOP_VIEW_MODE" => "SECTION",
-		"USER_CONSENT" => "N",
-		"USER_CONSENT_ID" => "0",
+		"USER_CONSENT" => "Y",
+		"USER_CONSENT_ID" => "1",
 		"USER_CONSENT_IS_CHECKED" => "Y",
 		"USER_CONSENT_IS_LOADED" => "N",
 		"USE_BIG_DATA" => "Y",
@@ -257,14 +280,18 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "",
 		),
 		"FILTER_OFFERS_PROPERTY_CODE" => array(
-			0 => "ATT_MEMORY_VOLUME",
-			1 => "ATT_SVYAZ",
-			2 => "ATT_COLOR",
-			3 => "ATT_EKRAN",
-			4 => "",
+			0 => "",
+			1 => "",
 		),
-		"USE_REVIEW" => "N",
+		"USE_REVIEW" => "Y",
 		"LIST_OFFERS_LIMIT" => "5",
+		"MESSAGES_PER_PAGE" => "10",
+		"USE_CAPTCHA" => "Y",
+		"REVIEW_AJAX_POST" => "Y",
+		"PATH_TO_SMILE" => "/bitrix/images/forum/smile/",
+		"FORUM_ID" => "1",
+		"URL_TEMPLATES_READ" => "",
+		"SHOW_LINK_TO_FORUM" => "Y",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
