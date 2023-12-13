@@ -4,7 +4,32 @@ $APPLICATION->SetTitle("Каталог");
 ?>
 <!-- mt main start here -->
 <main id="mt-main">
-    <div class="container">
+	<!-- Mt Contact Banner of the Page -->
+	<section class="mt-contact-banner style4 wow fadeInUp" data-wow-delay="0.4s" style="background-image: url(http://placehold.it/1920x205);">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1>CHAIRS</h1>
+					<!-- Breadcrumbs of the Page -->
+					<nav class="breadcrumbs">
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:breadcrumb", 
+						"breadcrumbs", 
+						array(
+							"PATH" => "",
+							"SITE_ID" => "s1",
+							"START_FROM" => "0",
+							"COMPONENT_TEMPLATE" => "breadcrumbs"
+						),
+						false
+					);?>
+					</nav><!-- Breadcrumbs of the Page end -->
+				</div>
+			</div>
+		</div>
+	</section><!-- Mt Contact Banner of the Page end -->
+	<div class="container">
+	<div class="row">
 	<?
 		ob_start (); // добавлена строка
 		$APPLICATION->IncludeComponent(
@@ -251,7 +276,7 @@ $APPLICATION->SetTitle("Каталог");
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_STORE" => "N",
 		"COMPONENT_TEMPLATE" => "catalog",
-		"DETAIL_VOTE_DISPLAY_AS_RATING" => "rating",
+		"DETAIL_VOTE_DISPLAY_AS_RATING" => "vote_avg",
 		"DETAIL_BLOG_USE" => "Y",
 		"DETAIL_VK_USE" => "N",
 		"DETAIL_FB_USE" => "N",
@@ -263,14 +288,15 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "",
 		),
 		"FILTER_PROPERTY_CODE" => array(
-			0 => "ATT_SERYA",
-			1 => "ATT_MEMORY",
-			2 => "ATT_PROCESSOR",
-			3 => "ATT_DIAGONAL",
-			4 => "ATT_SIM_CARTA",
-			5 => "ATT_RAM",
-			6 => "ATT_SSD",
-			7 => "",
+			0 => "ATT_RASHIRENYE",
+			1 => "ATT_FRONT_CAM",
+			2 => "ATT_SOT_BES_CVYZ",
+			3 => "ATT_SIM_CARTA",
+			4 => "ATT_V_NAKOPIT",
+			5 => "ATT_GOD_RELIZA",
+			6 => "ATT_TSVET_CORP",
+			7 => "ATT_RAM",
+			8 => "",
 		),
 		"FILTER_PRICE_CODE" => array(
 			0 => "BASE",
@@ -280,7 +306,7 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "",
 		),
 		"FILTER_OFFERS_PROPERTY_CODE" => array(
-			0 => "",
+			0 => "ATT_COLOR",
 			1 => "",
 		),
 		"USE_REVIEW" => "Y",
@@ -307,7 +333,7 @@ $APPLICATION->SetTitle("Каталог");
 	),
 	false
 );?>
-
+    </div>
     </div>
 </main>
 

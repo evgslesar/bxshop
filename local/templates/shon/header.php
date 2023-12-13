@@ -43,7 +43,7 @@ $CurUri = $APPLICATION->GetCurUri();
     <meta name="msapplication-TileImage" content="/local/ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff"> -->
     <title><? $APPLICATION->ShowTitle() ?></title>
-
+	<?php \Bitrix\Main\UI\Extension::load('neti_favorite.neti_lib'); ?>
 
 </head>
 <body>

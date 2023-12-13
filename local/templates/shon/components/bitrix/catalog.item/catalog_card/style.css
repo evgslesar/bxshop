@@ -19,61 +19,21 @@
 	filter: grayscale(0%);
   }
   
-  .card_item {
-	margin-bottom: 30px;
-	position: relative;
-  }
-  .card_item_link {
-	display: block;
-	width: 100%;
-	text-decoration: none;
-	color: var(--c1);
-	position: relative;
-  }
-  .card_item_link_picture {
-	display: block;
-	height: 250px;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-  }
-  .card_item_link_discount {
-	background: var(--c3);
-	border-radius: 4px;
-	padding: 2px 7px;
-	text-align: center;
-	color: #ffffff;
-	font-size: 12px;
-  }
-  .card_item_link_name {
-	display: block;
-	height: 45px;
-	margin-top: 5px;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 23px;
-	overflow: hidden;
-	color: #666666;
-	display: block !important;
-  }
-  .card_item_price {
-	position: relative;
-	margin-top: 20px;
+
+  .offers-block{
+	padding: 0 15px;
 	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px 15px;
+	padding-bottom: 15px;
   }
-  .card_item_price_current {
-	font-size: 14px;
-	font-weight: bold;
+  .offers-block:first-child(){
+	width: 100%;
   }
-  .card_item_price_old {
-	position: absolute;
-	top: -20px;
-	color: #777;
-	font-size: 12px;
-  }
-  
+
   .card_item_sku_title {
-	font-size: 12px;
+	font-size: 10px;
 	color: #777777;
 	margin: 10px 0px 4px 0px;
   }
@@ -86,107 +46,91 @@
 	flex-wrap: wrap;
   }
   .card_item_sku ul li {
-	border: 1px var(--c4) solid;
+	border: 1px solid transparent;
 	cursor: pointer;
 	border-radius: 4px;
   }
   .card_item_sku ul li:hover {
-	border: 1px #333 solid;
+	border: 1px solid #333;
   }
   .card_item_sku ul li.selected {
-	border: var(--c3) 1px solid;
+	border: 1px solid #333;
   }
   .card_item_sku_pict {
 	padding: 5px;
   }
   .card_item_sku_pict span {
 	display: block;
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
   }
   .card_item_sku_text {
-	font-size: 12px;
+	font-size: 10px;
 	padding: 0px 5px;
   }
   
-  .card_item_activites {
-	display: flex;
-	position: relative;
-	flex-wrap: wrap;
-  }
-  .card_item_activites_quntity {
-	display: flex;
-	margin-top: 10px;
-	width: 100%;
-	justify-content: center;
-  }
-  .card_item_activites_quntity button {
-	width: 25px;
-	background: var(--c4);
-	height: 25px;
-	border: none;
-	transition: var(--animation1);
-	font-size: 14px;
-	border-radius: 100%;
-	position: relative;
-	z-index: 5;
-  }
-  .card_item_activites_quntity button:hover {
-	background: var(--c3);
-	color: #ffffff;
-  }
-  .card_item_activites_quntity input {
-	background: none;
-	width: 50px;
-	position: relative;
-	right: -7px;
-	height: 25px;
-	border: none;
-	text-align: center;
-	font-size: 13px;
-  }
-  .card_item_activites_btns {
-	width: 100%;
-  }
-  .card_item_activites_btns button {
-	width: 100%;
-	border: none;
-	font-size: 12px;
-	margin-top: 10px;
-  }
-  
-  .card_item {
-	position: relative;
-	height: 376px !important;
-  }
   
   .card_item_hidded {
 	display: none;
 	z-index: 10;
   }
   
-  .card_item_over_hover {
-	position: relative;
-	padding: 15px;
+  
+  .mt-product1 {
+	width: 100%;
+  }
+  .mt-product1 .links-box {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
 	background: #fff;
-	border: 1px var(--c4) solid;
-	border-radius: var(--radius1);
-	transition: var(--animation1);
-  }
-  .card_item_over_hover:hover {
+    width: 100%;
+    visibility: hidden;
+    position: absolute;
+    border: 1px solid #eee;
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+}
+.mt-product1:hover .links-box {
+	padding-bottom: 50px;
+	opacity: 0.9;
+	visibility: visible;
+}
+.mt-product1 ul.links {
 	z-index: 10;
-	box-shadow: var(--shadow1);
+}
+
+.mt-product1 .mt-stars {
+    top: 0;
+}
+.mt-product1 .mt-stars .bx-rating {
+    text-align: left;
+}
+.mt-product1 .mt-stars .bx-rating svg path{
+    fill: orange;
+}
+
+  .b2-link{
+	overflow: hidden;
   }
-  .card_item_over_hover:hover .card_item_hidded {
-	height: auto;
+  .b2-img{
 	display: block;
+	margin: 0 auto;
+	width: 275px;
+	height: 290px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
   }
-  .card_item_over_hover:hover .card_item_link_name {
-	color: var(--c3);
+
+  .btn-reset {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
   }
-  
-  /*# sourceMappingURL=style.css.map */
-  

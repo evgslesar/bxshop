@@ -129,7 +129,7 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 	<?
 }
 ?>
-<? echo $GLOBALS["sortirovka"]; ?>
+
 <div class="update_ajax_filter catalog-section bx-<?=$arParams['TEMPLATE_THEME']?>" data-entity="<?=$containerName?>">
 	<?
 	if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
@@ -193,13 +193,18 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 			];
 		}
 		?>
+		<?php
+			Bitrix\Main\Loader::includeModule('neti.favorite');
+			$defaultClass = \Bitrix\Main\Config\Option::get('neti.favorite',
+			'removeClass');
+		?>
 		<!-- items-container -->
+		<ul class="mt-productlisthold list-inline <?=$rowData['CLASS']?>" data-entity="items-row">
 		<?
 		foreach ($arResult['ITEM_ROWS'] as $rowData)
 		{
 			$rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']);
 			?>
-			<div class="row <?=$rowData['CLASS']?>" data-entity="items-row">
 				<?
 				switch ($rowData['VARIANT'])
 				{
@@ -282,44 +287,36 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 						break;
 
 					case 2:
+						?> 
+						<?
+						foreach ($rowItems as $item)
+						{
+							?>
+							<li>
+							<?
+							$APPLICATION->IncludeComponent(
+								'bitrix:catalog.item',
+								'catalog_card',
+								array(
+									'RESULT' => array(
+										'ITEM' => $item,
+										'AREA_ID' => $areaIds[$item['ID']],
+										'TYPE' => $rowData['TYPE'],
+										'BIG_LABEL' => 'N',
+										'BIG_DISCOUNT_PERCENT' => 'N',
+										'BIG_BUTTONS' => 'Y',
+										'SCALABLE' => 'N'
+									),
+									'PARAMS' => $generalParams + $itemParameters[$item['ID']],
+								),
+								$component,
+								array('HIDE_ICONS' => 'Y')
+							);
+							?>
+							</li>
+							<?
+						}
 						?>
-						<div class="col-xs-12 product-item-small-card">
-							<div class="row">
-								<?
-								foreach ($rowItems as $item)
-								{
-									?>
-									<div class="col-sm-4 product-item-big-card">
-										<div class="row">
-											<div class="col-md-12">
-												<?
-												$APPLICATION->IncludeComponent(
-													'bitrix:catalog.item',
-													'catalog_card',
-													array(
-														'RESULT' => array(
-															'ITEM' => $item,
-															'AREA_ID' => $areaIds[$item['ID']],
-															'TYPE' => $rowData['TYPE'],
-															'BIG_LABEL' => 'N',
-															'BIG_DISCOUNT_PERCENT' => 'N',
-															'BIG_BUTTONS' => 'Y',
-															'SCALABLE' => 'N'
-														),
-														'PARAMS' => $generalParams + $itemParameters[$item['ID']],
-													),
-													$component,
-													array('HIDE_ICONS' => 'Y')
-												);
-												?>
-											</div>
-										</div>
-									</div>
-									<?
-								}
-								?>
-							</div>
-						</div>
 						<?
 						break;
 
@@ -331,11 +328,11 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 								foreach ($rowItems as $item)
 								{
 									?>
-									<div class="col-xs-6 col-md-3">
+									<div class="col-xs-6 col-sm-4 col-md-3">
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'catalog_card',
 											array(
 												'RESULT' => array(
 													'ITEM' => $item,
@@ -705,11 +702,11 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 						<?
 						break;
 				}
-				?>
-			</div>
-			<?
 		}
 		unset($rowItems);
+		?>
+		</ul>
+		<?
 
 		unset($itemParameters);
 		unset($areaIds);

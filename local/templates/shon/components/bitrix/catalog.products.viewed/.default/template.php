@@ -11,7 +11,7 @@ use \Bitrix\Main\Localization\Loc;
  */
 
 $this->setFrameMode(true);
-$this->addExternalCss('/bitrix/css/main/bootstrap.css');
+// $this->addExternalCss('/bitrix/css/main/bootstrap.css');
 
 $templateLibrary = array('popup');
 $currencyList = '';
@@ -273,7 +273,7 @@ $containerName = 'catalog-products-viewed-container';
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'catalog_card',
 											array(
 												'RESULT' => array(
 													'ITEM' => $item,

@@ -23,7 +23,7 @@ $this->setFrameMode(true);
             <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"
                    value="<? echo $arItem["HTML_VALUE"] ?>"/>
         <? endforeach; ?>
-
+ 
         <div class="smart-filter">
             <? foreach ($arResult["ITEMS"] as $key => $arItem)//prices
             {
