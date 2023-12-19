@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Контакты");
 	<!-- Mt Map Holder of the Page -->
 	<div class="mt-map-holder wow fadeInUp" data-wow-delay="0.4s" data-lat="52.392363" data-lng="1.480408" data-zoom="8">
 		<div class="map-info">
-		<h2>Sochan</h2>
+		<h2><?php echo $APPLICATION->GetTitle(); ?></h2>
 		<p>Lorem ipsum dolor sit amet...</p>
 		</div>
 	</div>

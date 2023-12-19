@@ -5,11 +5,11 @@ $APPLICATION->SetTitle("Каталог");
 <!-- mt main start here -->
 <main id="mt-main">
 	<!-- Mt Contact Banner of the Page -->
-	<section class="mt-contact-banner style4 wow fadeInUp" data-wow-delay="0.4s" style="background-image: url(http://placehold.it/1920x205);">
+	<section class="mt-contact-banner style4 wow fadeInUp" data-wow-delay="0.4s">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h1>CHAIRS</h1>
+					<h1><?php echo $APPLICATION->GetTitle(); ?></h1>
 					<!-- Breadcrumbs of the Page -->
 					<nav class="breadcrumbs">
 					<?$APPLICATION->IncludeComponent(
@@ -188,7 +188,7 @@ $APPLICATION->SetTitle("Каталог");
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER" => "asc",
 		"OFFERS_SORT_ORDER2" => "desc",
-		"OFFER_ADD_PICT_PROP" => "MORE_PHOTO",
+		"OFFER_ADD_PICT_PROP" => "-",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",

@@ -1178,6 +1178,10 @@ h2.basket-item-info-name {
 /*endregion*/
 
 /*region Amount*/
+
+
+
+
 .basket-items-list-item-amount {
 	-ms-flex-order: 3;
 	padding-top: 20px;
@@ -1347,6 +1351,22 @@ h2.basket-item-info-name {
 	.basket-item-block-amount { padding-top: 0; }
 }
 
+
+.basket-item-quantity-input{
+	width: 50px;
+	text-align: center;
+	border: none;
+}
+.basket-item-block-amount-custom{
+	display: block;
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.row.border.top-row{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
 /*endregion*/
 
 /*region Price*/

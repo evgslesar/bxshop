@@ -5317,6 +5317,7 @@ a:hover {
 
 .banner-12 {
 	margin-bottom: 25px;
+	overflow: hidden;
 }
 
 .banner-12 h2 span {
@@ -5347,13 +5348,18 @@ a:hover {
 .banner-12 .btn-shop .fa:hover {
 	border-color: #ff6060;
 }
+.banner-12 img {
+	object-fit: cover;
+	width: 415px;
+	height: 265px;
+}
 
 /*------------------------------------------------------------------
 55. banner 13 / .banner-13
 -------------------------------------------------------------------*/
 
 .banner-13 .holder {
-	padding: 39px 39px 20px;
+	overflow: hidden;
 }
 
 .banner-13 h2 {
@@ -5379,6 +5385,11 @@ a:hover {
 	position: absolute;
 	right: 38px;
 	bottom: 35px;
+}
+.banner-13 img {
+	object-fit: cover;
+	width: 415px;
+	height: 265px;
 }
 
 /*------------------------------------------------------------------
@@ -12630,3 +12641,17 @@ a:focus {
 	margin: 0;
 }
 
+.mt-blog-detail.style1 .banner-frame.toppadding-zero {
+	display: flex;
+	justify-content: center;
+}
+.mt-blog-detail.style1 .banner-frame.toppadding-zero .banner-7,
+.mt-blog-detail.style1 .banner-frame.toppadding-zero .banner-8 {
+	overflow: hidden;
+}
+.mt-blog-detail.style1 .banner-frame.toppadding-zero .banner-7 img,
+.mt-blog-detail.style1 .banner-frame.toppadding-zero .banner-8 img {
+	width: 350px;
+	height: 350px;
+	object-fit: cover;
+}

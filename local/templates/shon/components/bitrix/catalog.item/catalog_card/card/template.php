@@ -145,14 +145,14 @@ use \Bitrix\Main\Localization\Loc;
                                                     });
                                                 </script>
 
-                                                <!-- <style type="text/css">
+                                                <style type="text/css">
                                                     .link_to_card_dn, .add_to_cart_dn {
                                                         display: none !important;
                                                     }
                                                     .link_to_card_db {
                                                         display: block !important;
                                                     }
-                                                </style> -->
+                                                </style>
 
                                                 <!--button id="<?= $itemIds['BUY_LINK'] ?>" class="btn btn-reset">
                                                     <?//= ($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET']) ?>

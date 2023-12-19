@@ -1,0 +1,7 @@
+.menu__panel.menu__list.menu__level-01{
+	height: 100%;
+	overflow: hidden;
+}
+.menu__item.active {
+	background-color: #333;
+}

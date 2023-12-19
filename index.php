@@ -8,105 +8,37 @@ $APPLICATION->SetTitle('Главная');
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <?php /* ?>
-                <!-- banner frame start here -->
-                <div class="banner-frame toppadding-zero">
-                    <!-- banner 5 white start here -->
-                    <div class="banner-5 white wow fadeInLeft" data-wow-delay="0.4s">
-                        <img src="http://placehold.it/590x565" alt="image description">
-                        <div class="holder">
-                            <div class="texts">
-                                <strong class="title">FURNITURE DESIGNS IDEAS</strong>
-                                <h3><strong>New</strong> Collection</h3>
-                                <p>Consectetur adipisicing elit. Beatae accusamus, optio, repellendus inventore</p>
-                                <span class="price-add">$ 79.00</span>
-                            </div>
-                        </div>
-                    </div><!-- banner 5 white end here -->
-                    <!-- banner 6 white start here -->
-                    <div class="banner-6 white wow fadeInRight" data-wow-delay="0.4s">
-                        <img src="http://placehold.it/275x565" alt="image description">
-                        <div class="holder">
-                            <strong class="sub-title">SOFAS &amp; ARMCHAIRS</strong>
-                            <h3>3 Seater Leather Sofa</h3>
-                            <span class="offer">
-                                <span class="price-less">$ 659.00</span>
-                                <span class="prices">$ 499.00</span>
-                            </span>
-                            <a href="product-detail.html" class="btn-shop">
-                                <span>shop now</span>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </div>
-                    </div><!-- banner 5 white end here -->
-                    <!-- banner box two start here -->
-                    <div class="banner-box two">
-                        <!-- banner 7 right start here -->
-                        <div class="banner-7 right wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="http://placehold.it/295x275" alt="image description">
-                            <div class="holder">
-                                <h2><strong>ACRYLIC FABRIC <br>BEAN BAG</strong></h2>
-                                <ul class="mt-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
-                                <div class="price-tag">
-                                    <span class="price">$ 99.00</span>
-                                    <a class="shop-now" href="product-detail.html">SHOP NOW</a>
-                                </div>
-                            </div>
-                        </div><!-- banner 7 right end here -->
-                        <!-- banner 8 start here -->
-                        <div class="banner-8 wow fadeInDown" data-wow-delay="0.4s">
-                            <img src="http://placehold.it/295x275" alt="image description">
-                            <div class="holder">
-                                <h2><strong>CHAIR WITH <br>ARMRESTS</strong></h2>
-                                <ul class="mt-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                </ul>
-                                <div class="price-tag">
-                                    <span class="price-off">$ 129.00</span>
-                                    <span class="price">$ 99.00</span>
-                                    <a class="btn-shop" href="product-detail.html">
-                                        <span>HURRY UP!</span> 
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!-- banner 8 start here -->
-                    </div>
-                </div><!-- banner frame end here -->
-                <?php */ ?>
                 <!-- banner frame start here -->
                 <div class="banner-frame toppadding-zero">
                     <!-- banner box third start here -->
                     <div class="banner-box third">
                         <!-- banner 12 right white start here -->
-                        <div class="banner-12 right white wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="http://placehold.it/415x225" alt="image description">
-                            <div class="holder">
-                                <h2><span>Chairs</span><strong>ZIO DINING CHAIR</strong></h2>
-                                <a class="btn-shop" href="product-detail.html">
-                                    <span>SHOP NOW</span>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
+                        <div class="banner-12 right white wow fadeInUp" style="overflow: hidden;" data-wow-delay="0.4s">
+							<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/banner-12.php"
+									)
+								);?>
+
                         </div><!-- banner 12 right white end here -->
                         <!-- banner 13 right start here -->
                         <div class="banner-13 right wow fadeInDown" data-wow-delay="0.4s">
-                            <img src="http://placehold.it/415x335" alt="image description">
-                            <div class="holder">
-                                <h2><span>Accessories / Lighting</span><strong>TOTEM FLOOR LAMP</strong></h2>
-                                <a class="btn-shop" href="product-detail.html">
-                                    <span>SHOP NOW</span>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
+								<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/banner-13.php"
+									)
+								);?>
+
                         </div><!-- banner 13 right end here -->
                     </div><!-- banner box third end here -->
                     <!-- slider 7 start here -->
@@ -399,6 +331,7 @@ $APPLICATION->SetTitle('Главная');
                     </div>
                 </div><!-- mt producttabs end here -->
                 <!-- banner frame start here -->
+				<?php /*
                 <div class="banner-frame nospace wow fadeInUp" data-wow-delay="0.4s">
                     <!-- banner 9 start here -->
                     <div class="banner-9">
@@ -434,6 +367,7 @@ $APPLICATION->SetTitle('Главная');
                         </div>
                     </div><!-- banner 11 end here -->
                 </div><!-- banner frame end here -->
+				*/?>
                 <!-- mt producttabs style3 start here -->
                 <div class="mt-producttabs style3 wow fadeInUp" data-wow-delay="0.4s">
                     <h2 class="heading">Бестселлеры</h2>
@@ -570,111 +504,101 @@ $APPLICATION->SetTitle('Главная');
                 <div class="mt-blog-detail style1">
                 <div class="container">
                     <div class="row">
-                    <div class="col-xs-12 col-sm-8 wow fadeInLeft" data-wow-delay="0.4s">
-                        <!-- Blog Post of the Page -->
-                        <article class="blog-post style2">
-                        <div class="img-holder">
-                            <a href="blog-post-detail-sidebar.html"><img src="http://placehold.it/280x170" alt="image description"></a>
-                            <ul class="list-unstyled comment-nav">
-                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
-                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
-                            </ul>
-                        </div>
-                        <div class="blog-txt">
-                            <h2><a href="blog-post-detail-sidebar.html">IDEAS FOR LIVING ROOMS</a></h2>
-                            <ul class="list-unstyled blog-nav">
-                            <li> <a href="#"><i class="fa fa-clock-o"></i>20 April 2015</a></li>
-                            <li> <a href="#"><i class="fa fa-list"></i>Design</a></li>
-                            <li> <a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>
-                            </ul>
-                            <p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut. Vestibulum sit amet metus euismod, condimentum lectus id, ultrices sem. </p>
-                            <a href="blog-post-detail-sidebar.html" class="btn-more">Read More</a>
-                        </div>
-                        </article>
-                        <!-- Blog Post of the Page end -->
-                        <!-- Blog Post of the Page -->
-                        <article class="blog-post style2">
-                        <div class="img-holder">
-                            <a href="blog-post-detail-sidebar.html"><img src="http://placehold.it/280x170" alt="image description"></a>
-                            <ul class="list-unstyled comment-nav">
-                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
-                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
-                            </ul>
-                        </div>
-                        <div class="blog-txt">
-                            <h2><a href="blog-post-detail-sidebar.html">IDEAS FOR LIVING ROOMS</a></h2>
-                            <ul class="list-unstyled blog-nav">
-                            <li> <a href="#"><i class="fa fa-clock-o"></i>20 April 2015</a></li>
-                            <li> <a href="#"><i class="fa fa-list"></i>Design</a></li>
-                            <li> <a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>
-                            </ul>
-                            <p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut. Vestibulum sit amet metus euismod, condimentum lectus id, ultrices sem. </p>
-                            <a href="blog-post-detail-sidebar.html" class="btn-more">Read More</a>
-                        </div>
-                        </article>
-                        <!-- Blog Post of the Page end -->
-                        <!-- Blog Post of the Page -->
-                        <article class="blog-post style2">
-                        <div class="img-holder">
-                            <a href="blog-post-detail-sidebar.html"><img src="http://placehold.it/280x170" alt="image description"></a>
-                            <ul class="list-unstyled comment-nav">
-                            <li><a href="#"><i class="fa fa-comments"></i>12</a></li>
-                            <li><a href="#"><i class="fa fa-share-alt"></i>14</a></li>
-                            </ul>
-                        </div>
-                        <div class="blog-txt">
-                            <h2><a href="blog-post-detail-sidebar.html">IDEAS FOR LIVING ROOMS</a></h2>
-                            <ul class="list-unstyled blog-nav">
-                            <li> <a href="#"><i class="fa fa-clock-o"></i>20 April 2015</a></li>
-                            <li> <a href="#"><i class="fa fa-list"></i>Design</a></li>
-                            <li> <a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>
-                            </ul>
-                            <p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut. Vestibulum sit amet metus euismod, condimentum lectus id, ultrices sem. </p>
-                            <a href="blog-post-detail-sidebar.html" class="btn-more">Read More</a>
-                        </div>
-                        </article>
-                        <!-- Blog Post of the Page end -->
-                    </div>
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:news.list", 
+						"news_on_main", 
+						array(
+							"ACTIVE_DATE_FORMAT" => "d.m.Y",
+							"ADD_SECTIONS_CHAIN" => "N",
+							"AJAX_MODE" => "N",
+							"AJAX_OPTION_ADDITIONAL" => "",
+							"AJAX_OPTION_HISTORY" => "N",
+							"AJAX_OPTION_JUMP" => "N",
+							"AJAX_OPTION_STYLE" => "Y",
+							"CACHE_FILTER" => "N",
+							"CACHE_GROUPS" => "Y",
+							"CACHE_TIME" => "36000",
+							"CACHE_TYPE" => "A",
+							"CHECK_DATES" => "Y",
+							"DETAIL_URL" => "/blog/?ELEMENT_ID=#ELEMENT_ID#",
+							"DISPLAY_BOTTOM_PAGER" => "N",
+							"DISPLAY_DATE" => "Y",
+							"DISPLAY_NAME" => "Y",
+							"DISPLAY_PICTURE" => "Y",
+							"DISPLAY_PREVIEW_TEXT" => "Y",
+							"DISPLAY_TOP_PAGER" => "N",
+							"FIELD_CODE" => array(
+								0 => "",
+								1 => "",
+							),
+							"FILTER_NAME" => "",
+							"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+							"IBLOCK_ID" => "3",
+							"IBLOCK_TYPE" => "articles",
+							"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+							"INCLUDE_SUBSECTIONS" => "Y",
+							"MESSAGE_404" => "",
+							"NEWS_COUNT" => "3",
+							"PAGER_BASE_LINK_ENABLE" => "N",
+							"PAGER_DESC_NUMBERING" => "N",
+							"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+							"PAGER_SHOW_ALL" => "N",
+							"PAGER_SHOW_ALWAYS" => "N",
+							"PAGER_TEMPLATE" => ".default",
+							"PAGER_TITLE" => "Новости",
+							"PARENT_SECTION" => "",
+							"PARENT_SECTION_CODE" => "",
+							"PREVIEW_TRUNCATE_LEN" => "100",
+							"PROPERTY_CODE" => array(
+								0 => "FORUM_MESSAGE_CNT",
+								1 => "",
+							),
+							"SET_BROWSER_TITLE" => "N",
+							"SET_LAST_MODIFIED" => "N",
+							"SET_META_DESCRIPTION" => "N",
+							"SET_META_KEYWORDS" => "N",
+							"SET_STATUS_404" => "N",
+							"SET_TITLE" => "N",
+							"SHOW_404" => "N",
+							"SORT_BY1" => "ACTIVE_FROM",
+							"SORT_BY2" => "SORT",
+							"SORT_ORDER1" => "DESC",
+							"SORT_ORDER2" => "ASC",
+							"STRICT_SECTION_CHECK" => "N",
+							"COMPONENT_TEMPLATE" => "news_on_main"
+						),
+						false
+					);?>
                     <div class="col-xs-12 col-sm-4 text-right sidebar wow fadeInRight" data-wow-delay="0.4s">
                         <div class="banner-frame toppadding-zero">
                             <div class="banner-box two">
                                 <!-- banner 7 right start here -->
                                 <div class="banner-7 right wow fadeInUp" data-wow-delay="0.4s">
-                                    <img src="http://placehold.it/295x275" alt="image description">
-                                    <div class="holder">
-                                        <h2><strong>ACRYLIC FABRIC <br>BEAN BAG</strong></h2>
-                                        <ul class="mt-stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="price-tag">
-                                            <span class="price">$ 99.00</span>
-                                            <a class="shop-now" href="product-detail.html">SHOP NOW</a>
-                                        </div>
-                                    </div>
+								<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/banner-7.php"
+									)
+								);?>
+
                                 </div><!-- banner 7 right end here -->
                                 <!-- banner 8 start here -->
                                 <div class="banner-8 wow fadeInDown" data-wow-delay="0.4s">
-                                    <img src="http://placehold.it/295x275" alt="image description">
-                                    <div class="holder">
-                                        <h2><strong>CHAIR WITH <br>ARMRESTS</strong></h2>
-                                        <ul class="mt-stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="price-tag">
-                                            <span class="price-off">$ 129.00</span>
-                                            <span class="price">$ 99.00</span>
-                                            <a class="btn-shop" href="product-detail.html">
-                                                <span>HURRY UP!</span> 
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+								<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/banner-8.php"
+									)
+								);?>
+
                                 </div><!-- banner 8 start here -->
                             </div>
                         </div>

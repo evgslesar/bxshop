@@ -10,21 +10,30 @@ $APPLICATION->SetTitle("Восстановление пароля");
 ?>
 <main id="mt-main">
 	<!-- Mt Content Banner of the Page -->
-	<section class="mt-contact-banner" style="background-image: url(http://placehold.it/1920x205);">
-		<div class="container">
+	<section class="mt-contact-banner style4 wow fadeInUp" data-wow-delay="0.4s">
+	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 text-center">
-			<h1>Восстановление пароля</h1>
+			<h1><?php echo $APPLICATION->GetTitle(); ?></h1>
+			<!-- Breadcrumbs of the Page -->
 			<nav class="breadcrumbs">
-				<ul class="list-unstyled">
-				<li><a href="index.html">home <i class="fa fa-angle-right"></i></a></li>
-				<li>Восстановление пароля</li>
-				</ul>
+				<?$APPLICATION->IncludeComponent(
+					"bitrix:breadcrumb", 
+					"breadcrumbs", 
+					array(
+						"PATH" => "",
+						"SITE_ID" => "s1",
+						"START_FROM" => "0",
+						"COMPONENT_TEMPLATE" => "breadcrumbs"
+					),
+					false
+				);?>
 			</nav>
+			<!-- Breadcrumbs of the Page end -->
 			</div>
 		</div>
-		</div>
-	</section>
+	</div>
+</section>
 	<!-- Mt Content Banner of the Page end -->
 	<!-- Mt About Section of the Page -->
 	<section class="mt-about-sec" style="padding-bottom: 0;">

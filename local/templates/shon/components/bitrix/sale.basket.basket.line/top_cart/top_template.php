@@ -94,3 +94,4 @@ if ($arParams['SHOW_PERSONAL_LINK'] == 'Y'):?>
 	<a href="<?=$arParams['PATH_TO_PERSONAL']?>"><?=GetMessage('TSB1_PERSONAL')?></a>
 	</div>
 <?endif?>
+ 

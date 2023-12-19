@@ -120,38 +120,49 @@ $CurUri = $APPLICATION->GetCurUri();
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- mt logo start here -->
-								<div class="mt-logo"><a href="/"><img src="<?php echo SITE_TEMPLATE_PATH ?>/images/mt-logo.webp" alt="schon"></a></div>
+								<div class="mt-logo">
+								<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/includes/header-logo.php"
+									)
+								);?>
+								</div>
 								<!-- mt sh cart start here -->
 								<div class="mt-sh-cart">
 								<?$APPLICATION->IncludeComponent(
-									"bitrix:sale.basket.basket.line", 
-									"top_cart", 
-									array(
-										"COMPONENT_TEMPLATE" => "top_cart",
-										"HIDE_ON_BASKET_PAGES" => "N",
-										"MAX_IMAGE_SIZE" => "70",
-										"PATH_TO_AUTHORIZE" => SITE_DIR."personal/auth/",
-										"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
-										"PATH_TO_ORDER" => SITE_DIR."personal/order_make/",
-										"PATH_TO_PERSONAL" => SITE_DIR."personal/",
-										"PATH_TO_PROFILE" => SITE_DIR."personal/",
-										"PATH_TO_REGISTER" => SITE_DIR."personal/auth/",
-										"POSITION_FIXED" => "N",
-										"SHOW_AUTHOR" => "Y",
-										"SHOW_DELAY" => "N",
-										"SHOW_EMPTY_VALUES" => "N",
-										"SHOW_IMAGE" => "Y",
-										"SHOW_NOTAVAIL" => "N",
-										"SHOW_NUM_PRODUCTS" => "Y",
-										"SHOW_PERSONAL_LINK" => "N",
-										"SHOW_PRICE" => "Y",
-										"SHOW_PRODUCTS" => "N",
-										"SHOW_REGISTRATION" => "N",
-										"SHOW_SUMMARY" => "Y",
-										"SHOW_TOTAL_PRICE" => "Y"
-									),
-									false
-								);?>
+	"bitrix:sale.basket.basket.line", 
+	"top_cart", 
+	array(
+		"COMPONENT_TEMPLATE" => "top_cart",
+		"HIDE_ON_BASKET_PAGES" => "N",
+		"MAX_IMAGE_SIZE" => "70",
+		"PATH_TO_AUTHORIZE" => SITE_DIR."personal/auth/",
+		"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+		"PATH_TO_ORDER" => SITE_DIR."personal/order_make/",
+		"PATH_TO_PERSONAL" => SITE_DIR."personal/",
+		"PATH_TO_PROFILE" => SITE_DIR."personal/",
+		"PATH_TO_REGISTER" => SITE_DIR."personal/auth/",
+		"POSITION_FIXED" => "N",
+		"SHOW_AUTHOR" => "Y",
+		"SHOW_DELAY" => "N",
+		"SHOW_EMPTY_VALUES" => "N",
+		"SHOW_IMAGE" => "Y",
+		"SHOW_NOTAVAIL" => "N",
+		"SHOW_NUM_PRODUCTS" => "Y",
+		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_PRICE" => "Y",
+		"SHOW_PRODUCTS" => "Y",
+		"SHOW_REGISTRATION" => "N",
+		"SHOW_SUMMARY" => "Y",
+		"SHOW_TOTAL_PRICE" => "Y"
+	),
+	false
+);?>
 								</div>
 								<!-- mt sh cart end here -->
 								<!-- mt icon list start here -->

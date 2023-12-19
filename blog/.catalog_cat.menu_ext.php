@@ -8,8 +8,8 @@
 		array( 
 		"IS_SEF" => "Y", 
 		"SEF_BASE_URL" => "/blog/", 
-		"SECTION_PAGE_URL" => "#SECTION_CODE_PATH#/", 
-		"DETAIL_PAGE_URL" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/", 
+		"SECTION_PAGE_URL" => "", 
+		"DETAIL_PAGE_URL" => "", 
 		"IBLOCK_TYPE" => "articles", 
 		"IBLOCK_ID" => "3", 
 		"DEPTH_LEVEL" => "1", 

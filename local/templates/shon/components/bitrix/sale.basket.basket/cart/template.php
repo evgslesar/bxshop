@@ -12,7 +12,7 @@ use Bitrix\Main\Localization\Loc;
  * @var string $templateName
  * @var CMain $APPLICATION
  * @var CBitrixBasketComponent $component
- * @var CBitrixComponentTemplate $this
+ * @var CBitrixComponentTemplate $this 
  * @var array $giftParameters
  */
 
@@ -134,7 +134,7 @@ if ($arParams['USE_GIFTS'] === 'Y')
 \CJSCore::Init(array('fx', 'popup', 'ajax'));
 Main\UI\Extension::load(['ui.mustache']);
 
-$this->addExternalCss('/bitrix/css/main/bootstrap.css');
+// $this->addExternalCss('/bitrix/css/main/bootstrap.css');
 $this->addExternalCss($templateFolder.'/themes/'.$arParams['TEMPLATE_THEME'].'/style.css');
 
 $this->addExternalJs($templateFolder.'/js/action-pool.js');
@@ -157,27 +157,6 @@ $displayModeClass = $arParams['DISPLAY_MODE'] === 'compact' ? ' basket-items-lis
 
 if (empty($arResult['ERROR_MESSAGE']))
 {
-	if ($arParams['USE_GIFTS'] === 'Y' && $arParams['GIFTS_PLACE'] === 'TOP')
-	{
-		?>
-		<div data-entity="parent-container">
-			<div class="catalog-block-header"
-					data-entity="header"
-					data-showed="false"
-					style="display: none; opacity: 0;">
-				<?=$arParams['GIFTS_BLOCK_TITLE']?>
-			</div>
-			<?
-			$APPLICATION->IncludeComponent(
-				'bitrix:sale.products.gift.basket',
-				'.default',
-				$giftParameters,
-				$component
-			);
-			?>
-		</div>
-		<?
-	}
 
 	if ($arResult['BASKET_ITEM_MAX_COUNT_EXCEEDED'])
 	{
@@ -215,47 +194,71 @@ if (empty($arResult['ERROR_MESSAGE']))
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="basket-items-list-wrapper basket-items-list-wrapper-height-fixed basket-items-list-wrapper-light<?=$displayModeClass?>"
-					id="basket-items-list-wrapper">
-					<div class="basket-items-list-header" data-entity="basket-items-list-header">
-						<div class="basket-items-search-field" data-entity="basket-filter">
-							<div class="form has-feedback">
-								<input type="text" class="form-control"
-									placeholder="<?=Loc::getMessage('SBB_BASKET_FILTER')?>"
-									data-entity="basket-filter-input">
-								<span class="form-control-feedback basket-clear" data-entity="basket-filter-clear-btn"></span>
-							</div>
-						</div>
-						<div class="basket-items-list-header-filter">
-							<a href="javascript:void(0)" class="basket-items-list-header-filter-item active"
-								data-entity="basket-items-count" data-filter="all" style="display: none;"></a>
-							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
-								data-entity="basket-items-count" data-filter="similar" style="display: none;"></a>
-							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
-								data-entity="basket-items-count" data-filter="warning" style="display: none;"></a>
-							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
-								data-entity="basket-items-count" data-filter="delayed" style="display: none;"></a>
-							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
-								data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>
+		<div class="<?=$displayModeClass?>" id="basket-items-list-wrapper">
+			<div class="row border" data-entity="basket-items-list-header">
+				<!-- <div class="col-md-4" data-entity="basket-filter">
+					<div class="form has-feedback">
+						<input type="text" class="form-control"
+							placeholder="<?=Loc::getMessage('SBB_BASKET_FILTER')?>"
+							data-entity="basket-filter-input">
+						<span class="form-control-feedback basket-clear" data-entity="basket-filter-clear-btn"></span>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<a href="javascript:void(0)" class="basket-items-list-header-filter-item active"
+						data-entity="basket-items-count" data-filter="all" style="display: none;"></a>
+					<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
+						data-entity="basket-items-count" data-filter="similar" style="display: none;"></a>
+					<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
+						data-entity="basket-items-count" data-filter="warning" style="display: none;"></a>
+					<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
+						data-entity="basket-items-count" data-filter="delayed" style="display: none;"></a>
+					<a href="javascript:void(0)" class="basket-items-list-header-filter-item"
+						data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>
+				</div>
+			</div> -->
+			<div id="basket-items-list-container">
+				<div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
+				<div id="basket-item-list">
+					<div class="basket-search-not-found" id="basket-item-list-empty-result" style="display: none;">
+						<div class="basket-search-not-found-icon"></div>
+						<div class="basket-search-not-found-text">
+							<?=Loc::getMessage('SBB_FILTER_EMPTY_RESULT')?>
 						</div>
 					</div>
-					<div class="basket-items-list-container" id="basket-items-list-container">
-						<div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
-						<div class="basket-items-list" id="basket-item-list">
-							<div class="basket-search-not-found" id="basket-item-list-empty-result" style="display: none;">
-								<div class="basket-search-not-found-icon"></div>
-								<div class="basket-search-not-found-text">
-									<?=Loc::getMessage('SBB_FILTER_EMPTY_RESULT')?>
-								</div>
-							</div>
-							<table class="basket-items-list-table" id="basket-item-table"></table>
+					<div class="row border top-row">
+						<div class="col-xs-12 col-sm-6">
+						<strong class="title">PRODUCT</strong>
+						</div>
+						<div class="col-xs-12 col-sm-2">
+						<strong class="title">PRICE</strong>
+						</div>
+						<div class="col-xs-12 col-sm-2">
+						<strong class="title">QUANTITY</strong>
+						</div>
+						<div class="col-xs-12 col-sm-2">
+						<strong class="title">TOTAL</strong>
 						</div>
 					</div>
+
+					<div id="basket-item-table"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+				<form action="#" class="coupon-form">
+					<fieldset>
+					<div class="mt-holder">
+						<input type="text" class="form-control" placeholder="Your Coupon Code">
+						<button type="submit">APPLY</button>
+					</div>
+					</fieldset>
+				</form>
 				</div>
 			</div>
 		</div>
+
 		<?
 		if (
 			$arParams['BASKET_WITH_ORDER_INTEGRATION'] !== 'Y'
@@ -300,27 +303,6 @@ if (empty($arResult['ERROR_MESSAGE']))
 		});
 	</script>
 	<?
-	if ($arParams['USE_GIFTS'] === 'Y' && $arParams['GIFTS_PLACE'] === 'BOTTOM')
-	{
-		?>
-		<div data-entity="parent-container">
-			<div class="catalog-block-header"
-					data-entity="header"
-					data-showed="false"
-					style="display: none; opacity: 0;">
-				<?=$arParams['GIFTS_BLOCK_TITLE']?>
-			</div>
-			<?
-			$APPLICATION->IncludeComponent(
-				'bitrix:sale.products.gift.basket',
-				'.default',
-				$giftParameters,
-				$component
-			);
-			?>
-		</div>
-		<?
-	}
 }
 elseif ($arResult['EMPTY_BASKET'])
 {
