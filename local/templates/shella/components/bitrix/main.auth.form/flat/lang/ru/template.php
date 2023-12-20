@@ -1,7 +1,7 @@
 <?php
 $MESS['MAIN_AUTH_FORM_SUCCESS'] = 'Вы зарегистрированы и успешно авторизовались.';
 $MESS['MAIN_AUTH_FORM_HEADER'] = 'Пожалуйста, авторизуйтесь';
-$MESS['MAIN_AUTH_FORM_FIELD_LOGIN'] = 'Логин';
+$MESS['MAIN_AUTH_FORM_FIELD_LOGIN'] = 'Эл. почта';
 $MESS['MAIN_AUTH_FORM_FIELD_PASS'] = 'Пароль';
 $MESS['MAIN_AUTH_FORM_FIELD_CAPTCHA'] = 'Введите слово на картинке';
 $MESS['MAIN_AUTH_FORM_FIELD_REMEMBER'] = 'Запомнить меня на этом компьютере';

@@ -195,7 +195,7 @@ $APPLICATION->SetTitle("Каталог");
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/hasta/goods/",
-		"SEF_MODE" => "Y",
+		"SEF_MODE" => "N",
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -262,17 +262,9 @@ $APPLICATION->SetTitle("Каталог");
 		"COMPONENT_TEMPLATE" => "sh_catalog",
 		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => "",
 		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => "",
-		"SEF_URL_TEMPLATES" => array(
-			"sections" => "",
-			"section" => "#SECTION_CODE_PATH#/",
-			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
-			"compare" => "compare.php?action=#ACTION_CODE#",
-			"smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
-		),
 		"VARIABLE_ALIASES" => array(
-			"compare" => array(
-				"ACTION_CODE" => "action",
-			),
+			"ELEMENT_ID" => "ELEMENT_ID",
+			"SECTION_ID" => "SECTION_ID",
 		)
 	),
 	false

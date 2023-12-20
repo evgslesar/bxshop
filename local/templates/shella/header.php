@@ -542,24 +542,25 @@ $CurUri = $APPLICATION->GetCurUri();
 							<div class="header__sticky-logo d-none align-items-lg-center w-100 h-100 header__sticky-logo--displaced position-absolute top-0 left-0 py-6 ml-15" data-js-sticky-replace-here="logo" style="max-width: 64px;"></div>
 							<div class="container d-lg-flex">
 								<?$APPLICATION->IncludeComponent(
-									"bitrix:menu", 
-									"main_top_sh", 
-									array(
-										"ALLOW_MULTI_SELECT" => "N",
-										"CHILD_MENU_TYPE" => "sections_sh",
-										"DELAY" => "N",
-										"MAX_LEVEL" => "2",
-										"MENU_CACHE_GET_VARS" => array(
-										),
-										"MENU_CACHE_TIME" => "3600",
-										"MENU_CACHE_TYPE" => "N",
-										"MENU_CACHE_USE_GROUPS" => "Y",
-										"ROOT_MENU_TYPE" => "top_main_sh",
-										"USE_EXT" => "Y",
-										"COMPONENT_TEMPLATE" => "main_top_sh"
-									),
-									false
-								);?>
+	"bitrix:menu", 
+	"main_top_sh", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "sections_sh",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "N",
+		"ROOT_MENU_TYPE" => "top_main_sh",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "main_top_sh",
+		"MENU_THEME" => "site"
+	),
+	false
+);?>
 								<a href="/search" class="header__btn-search d-none d-lg-flex align-items-lg-center ml-lg-auto js-popup-button" data-js-popup-button="navigation"><span class="mr-lg-7">SEARCH</span><i>
 										<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-168" viewBox="0 0 24 24">
 											<path d="M13.261 2.475a8.177 8.177 0 0 1 2.588 1.738 8.172 8.172 0 0 1 1.738 2.588 7.97 7.97 0 0 1 .635 3.164 7.836 7.836 0 0 1-.527 2.861 8.355 8.355 0 0 1-1.426 2.412l4.902 4.902c.117.131.176.28.176.449s-.059.319-.176.449c-.065.052-.137.095-.215.127s-.156.049-.234.049-.156-.017-.234-.049-.149-.075-.215-.127l-4.902-4.902c-.703.6-1.507 1.074-2.412 1.426s-1.859.528-2.862.528a7.945 7.945 0 0 1-3.164-.635 8.144 8.144 0 0 1-2.588-1.738 8.15 8.15 0 0 1-1.738-2.588 7.962 7.962 0 0 1-.635-3.164 7.97 7.97 0 0 1 .635-3.164 8.172 8.172 0 0 1 1.738-2.588 8.15 8.15 0 0 1 2.588-1.738c.989-.423 2.044-.635 3.164-.635s2.174.212 3.164.635zM3.759 12.641c.358.834.85 1.563 1.475 2.188s1.354 1.117 2.188 1.475c.833.358 1.726.537 2.676.537s1.843-.179 2.676-.537c.833-.357 1.563-.85 2.188-1.475s1.116-1.354 1.475-2.188a6.705 6.705 0 0 0 .537-2.676c0-.95-.179-1.842-.537-2.676-.358-.833-.85-1.563-1.475-2.188s-1.354-1.116-2.188-1.475c-.835-.356-1.727-.536-2.677-.536s-1.843.18-2.676.537c-.833.358-1.563.85-2.188 1.475S4.117 6.456 3.759 7.289a6.694 6.694 0 0 0-.537 2.676c0 .951.178 1.843.537 2.676z" />
@@ -593,4 +594,21 @@ $CurUri = $APPLICATION->GetCurUri();
 
 	</div>
 	<main id="MainContent">
+		<?php if(!($CurDir == '/hasta/')) {?>
+		<div class="breadcrumbs mt-15">
+			<div class="container">
+			<?$APPLICATION->IncludeComponent(
+				"bitrix:breadcrumb", 
+				"breadcrumbs_sh", 
+				array(
+					"PATH" => "",
+					"SITE_ID" => "s2",
+					"START_FROM" => "0",
+					"COMPONENT_TEMPLATE" => "breadcrumbs_sh"
+				),
+				false
+			);?>
+			</div>
+		</div>
+		<?php } ?>
 

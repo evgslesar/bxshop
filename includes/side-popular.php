@@ -1,43 +1,32 @@
-				<!-- Popular Widget of the Page -->
-				<section class="widget popular-widget">
-					<h3>POPULAR POST</h3>
-					<ul class="list-unstyled text-right popular-post">
-					<li>
-						<div class="img-post">
-						<a href="#"><img src="http://placehold.it/60x60" alt="image description"></a>
-						</div>
-						<div class="info-dscrp">
-						<p>Vestibulum sit amet metus euismod amet metus euismod</p>
-						<time datetime="2016-02-03 20:00">24.09.2015</time>
-						</div>
-					</li>
-					<li>
-						<div class="img-post">
-						<a href="#"><img src="http://placehold.it/60x60" alt="image description"></a>
-						</div>
-						<div class="info-dscrp">
-						<p>Luctus id risus vel, ultricies dignissim lacus etiam dolor sem</p>
-						<time datetime="2016-02-03 20:00">24.09.2015</time>
-						</div>
-					</li>
-					<li>
-						<div class="img-post">
-						<a href="#"><img src="http://placehold.it/60x60" alt="image description"></a>
-						</div>
-						<div class="info-dscrp">
-						<p>Aenean lacus mi, porttitor quis <br>dapibustincidunt</p>
-						<time datetime="2016-02-03 20:00">24.09.2015</time>
-						</div>
-					</li>
-					<li>
-						<div class="img-post">
-						<a href="#"><img src="http://placehold.it/60x60" alt="image description"></a>
-						</div>
-						<div class="info-dscrp">
-						<p>Fusce mattis nunc lacus, vulputate facilisis dui efficitur ut</p>
-						<time datetime="2016-02-03 20:00">24.09.2015</time>
-						</div>
-					</li>
-					</ul>
-				</section>
-				<!-- Popular Widget of the Page end -->
+<!-- Popular Widget of the Page -->
+<section class="widget popular-widget">
+	<h3>Последние публикации</h3>
+	<?$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	"sidebar_popular", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "j F Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "300",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "#SITE_DIR#/blog/?ELEMENT_ID=#ELEMENT_ID#",
+		"FIELD_CODE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "CREATED_USER_NAME",
+			2 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "3",
+		),
+		"IBLOCK_TYPE" => "articles",
+		"NEWS_COUNT" => "4",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "sidebar_popular"
+	),
+	false
+);?>
+</section>
+<!-- Popular Widget of the Page end -->
