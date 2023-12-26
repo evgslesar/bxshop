@@ -521,3 +521,53 @@ a.postFormAutosave {
 	margin-top: 5px;
 	z-index:2;
 }
+
+
+.entry-quote {
+	background-color: seashell;
+}
+table.forum-quote td, table.forum-code td {
+	padding: 0.2em 1em 0.2em;
+}
+
+.reviews-reply-buttons {
+	display: flex;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	gap: 15px;
+}
+.mt-comments-section .mt-leave-comment .comment-form .reviews-reply-buttons .form-btn {
+	width: 120px;
+}
+
+.form-group.reviews-reply-field.reviews-reply-field-captcha {
+	display: flex;
+	gap: 20px;
+}
+.form-group.reviews-reply-field.reviews-reply-field-captcha .reviews-reply-field-captcha-image img {
+	height: 70px;
+	width: 160px;
+	object-fit: contain;
+}
+.mt-comments-section .mt-leave-comment .comment-form .comment-form-header {
+	display: flex;
+	justify-content: space-between;
+}
+.mt-comments-section .mt-leave-comment .comment-form .comment-form-header .form-control {
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	width: 48%;
+	border: 1px solid #adadad;
+	border-radius: 5px;
+}
+.form-group.reviews-reply-field.reviews-reply-field-text {
+	border: 1px solid #adadad;
+	border-radius: 5px;
+}
+.form-group.reviews-reply-field.reviews-reply-field-text .bx-editor-iframe {
+	background-color: #f7f7f7;
+}
+.form-group.reviews-reply-field.reviews-reply-field-text .main-post-form-toolbar {
+	background-color: #f7f7f7;
+}

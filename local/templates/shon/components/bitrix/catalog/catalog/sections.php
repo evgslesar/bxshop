@@ -34,7 +34,6 @@ else
 ?>
 <!-- sidebar of the Page start here -->
 <aside id="sidebar" class="col-xs-12 col-sm-4 col-md-3 wow fadeInLeft" data-wow-delay="0.4s">
-	<h2>FILTER</h2>
 
 	<?
 	$APPLICATION->IncludeComponent(
@@ -169,6 +168,7 @@ else
 			<p>Showing  <strong>1–9</strong> of  <strong>65</strong> results</p>
 			<p>View   <a href="#">9</a> / <a href="#">18</a> / <a href="#">27</a> / <a href="#">All</a></p>
 		</div><!-- mt-textbox end here -->
+		<div class="smart_filter_checked_items"></div>
 	</header><!-- mt shoplist header end here -->
 
 	<?php

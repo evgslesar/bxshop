@@ -59,7 +59,7 @@ $APPLICATION->SetTitle("Каталог");
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
-		"ADD_PICT_PROP" => "-",
+		"ADD_PICT_PROP" => "MORE_PHOTO",
 		"ADD_PROPERTIES_TO_BASKET" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -94,10 +94,8 @@ $APPLICATION->SetTitle("Каталог");
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "1by1",
-		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => array(
-		),
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
+		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => "",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => "",
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_OFFERS_FIELD_CODE" => array(
@@ -145,7 +143,7 @@ $APPLICATION->SetTitle("Каталог");
 		"GIFTS_SHOW_OLD_PRICE" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "Y",
@@ -223,7 +221,7 @@ $APPLICATION->SetTitle("Каталог");
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/catalog/",
-		"SEF_MODE" => "Y",
+		"SEF_MODE" => "N",
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -288,15 +286,16 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "",
 		),
 		"FILTER_PROPERTY_CODE" => array(
-			0 => "ATT_RASHIRENYE",
-			1 => "ATT_FRONT_CAM",
-			2 => "ATT_SOT_BES_CVYZ",
-			3 => "ATT_SIM_CARTA",
-			4 => "ATT_V_NAKOPIT",
-			5 => "ATT_GOD_RELIZA",
-			6 => "ATT_TSVET_CORP",
-			7 => "ATT_RAM",
-			8 => "",
+			0 => "",
+			1 => "ATT_RASHIRENYE",
+			2 => "ATT_FRONT_CAM",
+			3 => "ATT_SOT_BES_CVYZ",
+			4 => "ATT_SIM_CARTA",
+			5 => "ATT_V_NAKOPIT",
+			6 => "ATT_GOD_RELIZA",
+			7 => "ATT_TSVET_CORP",
+			8 => "ATT_RAM",
+			9 => "",
 		),
 		"FILTER_PRICE_CODE" => array(
 			0 => "BASE",
@@ -306,8 +305,9 @@ $APPLICATION->SetTitle("Каталог");
 			1 => "",
 		),
 		"FILTER_OFFERS_PROPERTY_CODE" => array(
-			0 => "ATT_COLOR",
-			1 => "",
+			0 => "",
+			1 => "ATT_COLOR",
+			2 => "",
 		),
 		"USE_REVIEW" => "Y",
 		"LIST_OFFERS_LIMIT" => "5",
@@ -318,17 +318,9 @@ $APPLICATION->SetTitle("Каталог");
 		"FORUM_ID" => "1",
 		"URL_TEMPLATES_READ" => "",
 		"SHOW_LINK_TO_FORUM" => "Y",
-		"SEF_URL_TEMPLATES" => array(
-			"sections" => "",
-			"section" => "#SECTION_CODE_PATH#/",
-			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
-			"compare" => "compare.php?action=#ACTION_CODE#",
-			"smart_filter" => "#/filter/#SMART_FILTER_PATH#/apply/",
-		),
 		"VARIABLE_ALIASES" => array(
-			"compare" => array(
-				"ACTION_CODE" => "action",
-			),
+			"ELEMENT_ID" => "ELEMENT_ID",
+			"SECTION_ID" => "SECTION_ID",
 		)
 	),
 	false

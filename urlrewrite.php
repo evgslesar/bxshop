@@ -16,15 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/personal/orders_history/index.php',
     'SORT' => 100,
   ),
-  12 => 
-  array (
-    'CONDITION' => '#^/catalog/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/catalog/index.php',
-    'SORT' => 100,
-  ),
-  9 => 
+  11 => 
   array (
     'CONDITION' => '#^\\??(.*)#',
     'RULE' => '&$1',

@@ -202,8 +202,7 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
                         <!-- Product Slider of the Page -->
                         <div class="product-item-detail-slider-container" id="<?= $itemIds['BIG_SLIDER_ID'] ?>">
                             <span data-entity="close-popup"></span>
-                            <div class="product-item-detail-slider-block
-                            <?= ($arParams['IMAGE_RESOLUTION'] === '1by1' ? 'product-item-detail-slider-block-square' : '') ?>"
+                            <div class="product-item-detail-slider-block product-item-detail-slider-block-square"
                                 data-entity="images-slider-block">
                                 <span class="product-item-detail-slider-left" data-entity="slider-control-left"
                                     style="display: none;"></span>
@@ -250,7 +249,7 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
                                     if (!empty($actualItem['MORE_PHOTO'])) {
                                         foreach ($actualItem['MORE_PHOTO'] as $key => $photo) {
                                             ?>
-                                            <div class="slide <?= ($key == 0 ? ' active' : '') ?>"
+                                            <div class="product-item-detail-slider-image slide <?= ($key == 0 ? ' active' : '') ?>"
                                                 data-entity="image" data-id="<?= $photo['ID'] ?>">
                                                 <img src="<?= $photo['SRC'] ?>" alt="<?= $alt ?>"
                                                     title="<?= $title ?>"<?= ($key == 0 ? ' itemprop="image"' : '') ?>>

@@ -41,7 +41,7 @@ $arrFilter = [
 	"catalog_grid", 
 	array(
 		"ACTION_VARIABLE" => "action",
-		"ADD_PICT_PROP" => "-",
+		"ADD_PICT_PROP" => "MORE_PHOTO",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_TO_BASKET_ACTION" => "ADD",
@@ -73,7 +73,7 @@ $arrFilter = [
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(
@@ -138,7 +138,7 @@ $arrFilter = [
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "Y",
-		"SHOW_ALL_WO_SECTION" => "N",
+		"SHOW_ALL_WO_SECTION" => "Y",
 		"SHOW_CLOSE_POPUP" => "N",
 		"SHOW_DISCOUNT_PERCENT" => "Y",
 		"SHOW_FROM_SECTION" => "N",

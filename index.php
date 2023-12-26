@@ -74,7 +74,7 @@ $APPLICATION->SetTitle('Главная');
 	"slider_on_main", 
 	array(
 		"ACTION_VARIABLE" => "action",
-		"ADD_PICT_PROP" => "-",
+		"ADD_PICT_PROP" => "MORE_PHOTO",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_TO_BASKET_ACTION" => "ADD",
@@ -108,7 +108,7 @@ $APPLICATION->SetTitle('Главная');
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(
@@ -204,7 +204,7 @@ $APPLICATION->SetTitle('Главная');
 	"slider_on_main", 
 	array(
 		"ACTION_VARIABLE" => "action",
-		"ADD_PICT_PROP" => "-",
+		"ADD_PICT_PROP" => "MORE_PHOTO",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_TO_BASKET_ACTION" => "ADD",
@@ -238,7 +238,7 @@ $APPLICATION->SetTitle('Главная');
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(
@@ -266,7 +266,7 @@ $APPLICATION->SetTitle('Главная');
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER" => "asc",
 		"OFFERS_SORT_ORDER2" => "desc",
-		"OFFER_ADD_PICT_PROP" => "MORE_PHOTO",
+		"OFFER_ADD_PICT_PROP" => "-",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -376,7 +376,7 @@ $APPLICATION->SetTitle('Главная');
 	"slider_on_main_best", 
 	array(
 		"ACTION_VARIABLE" => "action",
-		"ADD_PICT_PROP" => "-",
+		"ADD_PICT_PROP" => "MORE_PHOTO",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_TO_BASKET_ACTION" => "ADD",
@@ -410,7 +410,7 @@ $APPLICATION->SetTitle('Главная');
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(
@@ -438,7 +438,7 @@ $APPLICATION->SetTitle('Главная');
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER" => "asc",
 		"OFFERS_SORT_ORDER2" => "desc",
-		"OFFER_ADD_PICT_PROP" => "MORE_PHOTO",
+		"OFFER_ADD_PICT_PROP" => "-",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",

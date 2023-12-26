@@ -7,131 +7,6 @@ $APPLICATION->SetTitle("Интернет-магазин \"Shella\"");
 ?>
 
 
-		<!-- BEGIN content_for_index -->
-		<div id="theme-section-1551852751059" class="theme-section">
-			<div data-section-id="1551852751059" data-section-type="home-builder">
-
-				<div>
-					<div class="row mt-0 mb-10 mb-sm-45 mb-md-45 mb-lg-60 mb-xl-60 justify-content-start align-items-start">
-						<div class="col-12 col-md-12 mt-0 mb-0">
-							<div class="slider position-relative">
-								<div class="slider__slick" data-js-slider-slick data-arrows="false" data-bullets="true" data-speed="7">
-									<div class="slider__slide">
-
-
-										<div class="promobox promobox--type-07 promobox--is-slider position-relative d-flex flex-column align-items-center text-center overflow-hidden">
-											<div class="image-animation-trigger w-100">
-												<div class="w-100">
-
-													<div class="image-animation image-animation--from-default image-animation--to-default">
-														<div class="rimage" style=" min-height: 550px;">
-															<div class="d-sm-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-sm-block d-md-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-md-block d-lg-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-lg-block d-xl-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-xl-block" style="padding-top: 550px;"></div>
-															<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="rimage__img rimage__img--cover rimage__img--fade-in lazyload" data-master="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/62_4ca89f60-a457-447c-ae7f-caf6d8e7d246_{width}x.progressive.png.jpg?v=1552397961" data-aspect-ratio="3.4909090909090907" data-srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/62_4ca89f60-a457-447c-ae7f-caf6d8e7d246_900x.progressive.png.jpg?v=1552397961 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/files/62_4ca89f60-a457-447c-ae7f-caf6d8e7d246_900x@2x.progressive.png.jpg?v=1552397961 2x" alt="">
-														</div>
-													</div>
-												</div>
-												<div class="promobox__content promobox__content--animation-scale-in absolute-stretch d-flex flex-column flex-center px-15 py-7 overflow-hidden">
-													<div class="promobox__content_inner position-absolute d-flex flex-column flex-center w-100" style="max-width: 650px;margin-top: -10px;">
-
-														<div class="promo-text promo-text--width-01 mx-auto">
-															<p class="h1 mb-15">FINAL<br> CLEARANCE</p>
-															<p class="h4 mb-25">Take 20% Off ‘Sale Must-Haves'</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="slider__slide">
-
-
-										<div class="promobox promobox--type-07 promobox--is-slider position-relative d-flex flex-column align-items-center text-center overflow-hidden">
-											<div class="image-animation-trigger w-100">
-												<div class="w-100">
-
-													<div class="image-animation image-animation--from-default image-animation--to-default">
-														<div class="rimage" style=" min-height: 550px;">
-															<div class="d-sm-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-sm-block d-md-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-md-block d-lg-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-lg-block d-xl-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-xl-block" style="padding-top: 550px;"></div>
-															<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="rimage__img rimage__img--cover rimage__img--fade-in lazyload" data-master="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/41_79d10fee-0490-47a9-9c53-c48378ec183f_{width}x.progressive.png.jpg?v=1552394543" data-aspect-ratio="3.4909090909090907" data-srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/41_79d10fee-0490-47a9-9c53-c48378ec183f_900x.progressive.png.jpg?v=1552394543 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/files/41_79d10fee-0490-47a9-9c53-c48378ec183f_900x@2x.progressive.png.jpg?v=1552394543 2x" alt="">
-														</div>
-													</div>
-												</div>
-												<div class="promobox__content promobox__content--animation-scale-in absolute-stretch d-flex flex-column flex-center px-15 py-7 overflow-hidden">
-													<div class="promobox__content_inner position-absolute d-flex flex-column flex-center w-100" style="max-width: 600px;margin-top: -10px;">
-
-														<div class="promo-text mx-auto">
-															<p class="h1 mb-15 colorize-theme2-c">THIS JUST IN</p>
-															<p class="mb-25 h4 colorize-theme2-c">Hundreds Of New Spring
-																Arrivals, Featuring On-Trend Matching Sets For Her And
-																Breezy, Spring-Infused Prints For Him.</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="slider__slide">
-
-
-										<div class="promobox promobox--type-07 promobox--is-slider position-relative d-flex flex-column align-items-center text-center overflow-hidden">
-											<div class="image-animation-trigger w-100">
-												<div class="w-100">
-
-													<div class="rvideo" style=" min-height: 550px;">
-														<div class="d-sm-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-sm-block d-md-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-md-block d-lg-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-lg-block d-xl-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-xl-block" style="padding-top: 550px;"></div>
-														<video class="rvideo__video" muted playsinline autoplay loop preload="auto">
-															<source src="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/Untitled_Project_1.mp4?2792836601618417146" type="video/mp4">
-															Your browser does not support the video tag.
-														</video>
-													</div>
-												</div>
-												<div class="promobox__content promobox__content--animation-scale-in absolute-stretch d-flex flex-column flex-center px-15 py-7 overflow-hidden">
-													<div class="promobox__content_inner position-absolute d-flex flex-column flex-center w-100" style="max-width: 600px;margin-top: -10px;">
-
-														<div class="promo-text mx-auto">
-															<p class="h1 mb-15 colorize-theme2-c">70% OFF</p>
-															<p class="mb-25 h4 colorize-theme2-c">Hundreds Of New Spring
-																Arrivals, Featuring On-Trend Matching Sets For Her And
-																Breezy, Spring-Infused Prints For Him.</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<script>
-				Loader.require({
-					type: "script",
-					name: "home_builder"
-				});
-			</script>
-
-		</div>
 		<div id="theme-section-1537376034307" class="theme-section">
 			<div data-section-id="1537376034307" data-section-type="home-builder" class="container">
 
@@ -193,21 +68,147 @@ $APPLICATION->SetTitle("Интернет-магазин \"Shella\"");
 			</script>
 
 		</div>
-		<div id="theme-section-1537376166880" class="theme-section">
+
+		<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section", 
+	"mp_goods_list", 
+	array(
+		"ACTION_VARIABLE" => "action",
+		"ADD_PICT_PROP" => "MORE_PHOTO",
+		"ADD_PROPERTIES_TO_BASKET" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"ADD_TO_BASKET_ACTION" => "ADD",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BACKGROUND_IMAGE" => "UF_BACKGROUND_IMAGE",
+		"BASKET_URL" => "/hasta/personal/cart/",
+		"BROWSER_TITLE" => "-",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"COMPATIBLE_MODE" => "N",
+		"CONVERT_CURRENCY" => "N",
+		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
+		"DETAIL_URL" => "",
+		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_COMPARE" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"ELEMENT_SORT_FIELD" => "sort",
+		"ELEMENT_SORT_FIELD2" => "id",
+		"ELEMENT_SORT_ORDER" => "asc",
+		"ELEMENT_SORT_ORDER2" => "desc",
+		"ENLARGE_PRODUCT" => "STRICT",
+		"FILTER_NAME" => "arrFilter",
+		"HIDE_NOT_AVAILABLE" => "N",
+		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
+		"IBLOCK_ID" => "18",
+		"IBLOCK_TYPE" => "catalog",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"LABEL_PROP" => array(
+		),
+		"LAZY_LOAD" => "N",
+		"LINE_ELEMENT_COUNT" => "3",
+		"LOAD_ON_SCROLL" => "N",
+		"MESSAGE_404" => "",
+		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
+		"MESS_BTN_BUY" => "Купить",
+		"MESS_BTN_DETAIL" => "Подробнее",
+		"MESS_BTN_LAZY_LOAD" => "Показать ещё",
+		"MESS_BTN_SUBSCRIBE" => "Подписаться",
+		"MESS_NOT_AVAILABLE" => "Нет в наличии",
+		"MESS_NOT_AVAILABLE_SERVICE" => "Недоступно",
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"OFFERS_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"OFFERS_LIMIT" => "5",
+		"OFFERS_SORT_FIELD" => "sort",
+		"OFFERS_SORT_FIELD2" => "id",
+		"OFFERS_SORT_ORDER" => "asc",
+		"OFFERS_SORT_ORDER2" => "desc",
+		"OFFER_ADD_PICT_PROP" => "-",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Товары",
+		"PAGE_ELEMENT_COUNT" => "4",
+		"PARTIAL_PRODUCT_PROPERTIES" => "N",
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
+		"PRICE_VAT_INCLUDE" => "Y",
+		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+		"PRODUCT_DISPLAY_MODE" => "Y",
+		"PRODUCT_ID_VARIABLE" => "id",
+		"PRODUCT_PROPS_VARIABLE" => "prop",
+		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
+		"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'3','BIG_DATA':false}]",
+		"PRODUCT_SUBSCRIPTION" => "Y",
+		"RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+		"RCM_TYPE" => "personal",
+		"SECTION_CODE" => "",
+		"SECTION_CODE_PATH" => "",
+		"SECTION_ID" => "",
+		"SECTION_ID_VARIABLE" => "SECTION_ID",
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SEF_MODE" => "N",
+		"SEF_RULE" => "",
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SHOW_ALL_WO_SECTION" => "N",
+		"SHOW_CLOSE_POPUP" => "N",
+		"SHOW_DISCOUNT_PERCENT" => "Y",
+		"SHOW_FROM_SECTION" => "N",
+		"SHOW_MAX_QUANTITY" => "N",
+		"SHOW_OLD_PRICE" => "Y",
+		"SHOW_PRICE_COUNT" => "1",
+		"SHOW_SLIDER" => "Y",
+		"SLIDER_INTERVAL" => "3000",
+		"SLIDER_PROGRESS" => "Y",
+		"TEMPLATE_THEME" => "blue",
+		"USE_ENHANCED_ECOMMERCE" => "N",
+		"USE_MAIN_ELEMENT_SECTION" => "N",
+		"USE_PRICE_COUNT" => "N",
+		"USE_PRODUCT_QUANTITY" => "N",
+		"COMPONENT_TEMPLATE" => "mp_goods_list",
+		"DISCOUNT_PERCENT_POSITION" => "bottom-right"
+	),
+	false
+);?>
+		<!-- <div id="theme-section-1537376166880" class="theme-section">
 			<div data-section-id="1537376166880" data-section-type="sorting-collections">
 
 				<div class="container mt-0 mb-20">
 					<div class="sorting-collections">
 						<div class="sorting-collections__head row justify-content-center mb-25" data-sorting-collections-control>
 							<h4 class="col-auto mb-10 text-center">
-								<a href="collection.html" class="active" data-collection="new-products">New
+								<a href="" class="active" data-collection="new-products">New
 									Products</a>
 							</h4>
 							<h4 class="col-auto mb-10 text-center">
-								<a href="collection.html" data-collection="special-products">Special Products</a>
+								<a href="" data-collection="special-products">Special Products</a>
 							</h4>
 							<h4 class="col-auto mb-10 text-center">
-								<a href="collection.html" data-collection="featured-products">Featured
+								<a href="" data-collection="featured-products">Featured
 									Products</a>
 							</h4>
 						</div>
@@ -838,7 +839,74 @@ $APPLICATION->SetTitle("Интернет-магазин \"Shella\"");
 				});
 			</script>
 
-		</div>
+		</div> -->
+		
+		<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"mp_news_list", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "CREATED_USER_NAME",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "3",
+		"IBLOCK_TYPE" => "articles",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "4",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "mp_news_list"
+	),
+	false
+);?>
+
 		<div id="theme-section-1537376221647" class="theme-section">
 			<div data-section-id="1537376221647" data-section-type="carousel-brands" data-postload="carousel_brands">
 

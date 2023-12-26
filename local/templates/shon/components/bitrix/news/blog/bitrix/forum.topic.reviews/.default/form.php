@@ -29,43 +29,47 @@ if (!empty($arResult["ERROR_MESSAGE"])):
 <?
 endif;
 ?>
-<div class="reviews-reply-form" <?=(($arParams['SHOW_MINIMIZED'] == "Y") ? 'style="display:none;"' : '' )?>>
-<form name="<?=$arParams["FORM_ID"] ?>" id="<?=$arParams["FORM_ID"]?>" action="<?=POST_FORM_ACTION_URI?>#postform"<?
+<!-- Mt Leave Comments of the Page -->
+<h2>Оставьте свой комментарий</h2>
+
+<div class="mt-leave-comment" <?=(($arParams['SHOW_MINIMIZED'] == "Y") ? 'style="display:none;"' : '' )?>>
+<form class="comment-form" name="<?=$arParams["FORM_ID"] ?>" id="<?=$arParams["FORM_ID"]?>" action="<?=POST_FORM_ACTION_URI?>#postform"<?
 ?> method="POST" enctype="multipart/form-data" class="reviews-form">
-<script type="text/javascript">
-	BX.ready(function(){
-		BX.Forum.Init({
-			id : <?=CUtil::PhpToJSObject(array_keys($arResult["MESSAGES"]))?>,
-			form : BX('<?=$arParams["FORM_ID"]?>'),
-			preorder : '<?=$arParams["PREORDER"]?>',
-			pageNumber : <?=intval($arResult['PAGE_NUMBER']);?>,
-			pageCount : <?=intval($arResult['PAGE_COUNT']);?>,
-			bVarsFromForm : '<?=$arParams["bVarsFromForm"]?>',
-			ajaxPost : '<?=$arParams["AJAX_POST"]?>',
-			lheId : 'REVIEW_TEXT'
-		});
-		<? if ($arParams['SHOW_MINIMIZED'] == "Y")
-		{
-		?>
-		BX.addCustomEvent(BX('<?=$arParams["FORM_ID"]?>'), 'onBeforeHide', function() {
-			var link = BX('sw<?=$arParams["FORM_ID"]?>');
-			if (link) {
-				link.innerHTML = BX.message('MINIMIZED_EXPAND_TEXT');
-				BX.removeClass(BX.addClass(link.parentNode, "reviews-expanded"), "reviews-minimized");
+	<script type="text/javascript">
+		BX.ready(function(){
+			BX.Forum.Init({
+				id : <?=CUtil::PhpToJSObject(array_keys($arResult["MESSAGES"]))?>,
+				form : BX('<?=$arParams["FORM_ID"]?>'),
+				preorder : '<?=$arParams["PREORDER"]?>',
+				pageNumber : <?=intval($arResult['PAGE_NUMBER']);?>,
+				pageCount : <?=intval($arResult['PAGE_COUNT']);?>,
+				bVarsFromForm : '<?=$arParams["bVarsFromForm"]?>',
+				ajaxPost : '<?=$arParams["AJAX_POST"]?>',
+				lheId : 'REVIEW_TEXT'
+			});
+			<? if ($arParams['SHOW_MINIMIZED'] == "Y")
+			{
+			?>
+			BX.addCustomEvent(BX('<?=$arParams["FORM_ID"]?>'), 'onBeforeHide', function() {
+				var link = BX('sw<?=$arParams["FORM_ID"]?>');
+				if (link) {
+					link.innerHTML = BX.message('MINIMIZED_EXPAND_TEXT');
+					BX.removeClass(BX.addClass(link.parentNode, "reviews-expanded"), "reviews-minimized");
+				}
+			});
+			BX.addCustomEvent(BX('<?=$arParams["FORM_ID"]?>'), 'onBeforeShow', function() {
+				var link = BX('sw<?=$arParams["FORM_ID"]?>');
+				if (link) {
+					link.innerHTML = BX.message('MINIMIZED_MINIMIZE_TEXT');
+					BX.removeClass(BX.addClass(link.parentNode, "reviews-minimized"), "reviews-expanded");
+				}
+			});
+			<?
 			}
+			?>
 		});
-		BX.addCustomEvent(BX('<?=$arParams["FORM_ID"]?>'), 'onBeforeShow', function() {
-			var link = BX('sw<?=$arParams["FORM_ID"]?>');
-			if (link) {
-				link.innerHTML = BX.message('MINIMIZED_MINIMIZE_TEXT');
-				BX.removeClass(BX.addClass(link.parentNode, "reviews-minimized"), "reviews-expanded");
-			}
-		});
-		<?
-		}
-		?>
-	});
-</script>
+	</script>
+	<fieldset>
 	<input type="hidden" name="index" value="<?=htmlspecialcharsbx($arParams["form_index"])?>" />
 	<input type="hidden" name="back_page" value="<?=$arResult["CURRENT_PAGE"]?>" />
 	<input type="hidden" name="ELEMENT_ID" value="<?=$arParams["ELEMENT_ID"]?>" />
@@ -78,33 +82,28 @@ endif;
 	if ($arParams['AUTOSAVE'])
 		$arParams['AUTOSAVE']->Init();
 	?>
-	<div style="position:relative; display: block; width:100%;">
+	<div class="comment-form-content" style="position:relative; display: block; width:100%;">
 		<?
 		/* GUEST PANEL */
 		if (!$arResult["IS_AUTHORIZED"]):
 			?>
-			<div class="reviews-reply-fields">
-				<div class="reviews-reply-field-user">
-					<div class="reviews-reply-field reviews-reply-field-author"><label for="REVIEW_AUTHOR<?=$arParams["form_index"]?>"><?=GetMessage("OPINIONS_NAME")?><?
-							?><span class="reviews-required-field">*</span></label>
-						<span><input name="REVIEW_AUTHOR" id="REVIEW_AUTHOR<?=$arParams["form_index"]?>" size="30" type="text" value="<?=$arResult["REVIEW_AUTHOR"]?>" tabindex="<?=$tabIndex++;?>" /></span></div>
-					<?
+
+			<div class="form-group comment-form-header">
+				
+				<input class="form-control" name="REVIEW_AUTHOR" id="REVIEW_AUTHOR<?=$arParams["form_index"]?>" type="text" value="<?=$arResult["REVIEW_AUTHOR"]?>" tabindex="<?=$tabIndex++;?>" placeholder="Имя" />
+
+				<?
 					if ($arResult["FORUM"]["ASK_GUEST_EMAIL"]=="Y"):
 						?>
-						<div class="reviews-reply-field-user-sep">&nbsp;</div>
-						<div class="reviews-reply-field reviews-reply-field-email"><label for="REVIEW_EMAIL<?=$arParams["form_index"]?>"><?=GetMessage("OPINIONS_EMAIL")?></label>
-							<span><input type="text" name="REVIEW_EMAIL" id="REVIEW_EMAIL<?=$arParams["form_index"]?>" size="30" value="<?=$arResult["REVIEW_EMAIL"]?>" tabindex="<?=$tabIndex++;?>" /></span></div>
+						<input class="form-control" type="email" name="REVIEW_EMAIL" id="REVIEW_EMAIL<?=$arParams["form_index"]?>" value="<?=$arResult["REVIEW_EMAIL"]?>" tabindex="<?=$tabIndex++;?>" placeholder="Эл. почта" />
 					<?
 					endif;
 					?>
-					<div class="reviews-clear-float"></div>
-				</div>
 			</div>
 		<?
 		endif;
 		?>
-		<div class="reviews-reply-header"><span><?=$arParams["MESSAGE_TITLE"]?></span><span class="reviews-required-field">*</span></div>
-		<div class="reviews-reply-field reviews-reply-field-text">
+		<div class="form-group reviews-reply-field reviews-reply-field-text">
 			<?
 			$APPLICATION->IncludeComponent(
 				"bitrix:main.post.form",
@@ -135,7 +134,7 @@ endif;
 					"SMILES" => COption::GetOptionInt("forum", "smile_gallery_id", 0),
 					"NAME_TEMPLATE" => $arParams["NAME_TEMPLATE"],
 				),
-				$component,
+				// $component,
 				array("HIDE_ICONS" => "Y")
 			);
 			?>
@@ -145,7 +144,7 @@ endif;
 		/* CAPTHCA */
 		if ($arResult["CAPTCHA_CODE"] <> ''):
 			?>
-			<div class="reviews-reply-field reviews-reply-field-captcha">
+			<div class="form-group reviews-reply-field reviews-reply-field-captcha">
 				<input type="hidden" name="captcha_code" value="<?=$arResult["CAPTCHA_CODE"]?>"/>
 				<div class="reviews-reply-field-captcha-label">
 					<label for="captcha_word"><?=GetMessage("F_CAPTCHA_PROMT")?><span class="reviews-required-field">*</span></label>
@@ -212,7 +211,7 @@ endif;
 		<?
 		endif;
 		?>
-		<div class="reviews-reply-field reviews-reply-field-settings">
+		<div class="form-group reviews-reply-field reviews-reply-field-settings">
 			<?
 			/* SMILES */
 			if ($arResult["FORUM"]["ALLOW_SMILES"] == "Y"):
@@ -239,15 +238,23 @@ endif;
 
 		?>
 		<div class="reviews-reply-buttons">
-			<input name="send_button" type="submit" value="<?=GetMessage("OPINIONS_SEND")?>" tabindex="<?=$tabIndex++;?>" <?
+			<input class="form-btn" name="send_button" type="submit" value="<?=GetMessage("OPINIONS_SEND")?>" tabindex="<?=$tabIndex++;?>" <?
 			?>onclick="this.form.preview_comment.value = 'N';" />
-			<input name="view_button" type="submit" value="<?=GetMessage("OPINIONS_PREVIEW")?>" tabindex="<?=$tabIndex++;?>" <?
+			<input class="form-btn" name="view_button" type="submit" value="<?=GetMessage("OPINIONS_PREVIEW")?>" tabindex="<?=$tabIndex++;?>" <?
 			?>onclick="this.form.preview_comment.value = 'VIEW';" />
 		</div>
 
 	</div>
+
+	
+	<!-- <div class="form-group">
+		<textarea placeholder="Message"></textarea>
+	</div> -->
+	</fieldset>
 </form>
 </div>
+<!-- Mt Leave Comments of the Page end -->
+
 <?
 if ($arParams['AUTOSAVE'])
 	$arParams['AUTOSAVE']->LoadScript(array(
