@@ -448,31 +448,27 @@
 						</div>
 					</div>
 					<div class="popup-navigation__search search pt-lg-25 pb-lg-35 px-10 px-lg-0 js-popup-search-ajax" data-js-max-products="6">
-						<div class="container">
-							<div class="d-none d-lg-flex align-items-lg-center mb-5 mb-lg-10">
-								<p class="m-0">WHAT ARE YOU LOOKING FOR?</p>
-								<i class="search__close ml-auto cursor-pointer" data-js-popup-close>
-									<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-164" viewBox="0 0 24 24">
-										<path d="M19.583 4.965a.65.65 0 0 1-.176.449l-6.445 6.426 6.445 6.426c.117.131.176.28.176.449a.65.65 0 0 1-.176.449.846.846 0 0 1-.215.127.596.596 0 0 1-.468 0 .846.846 0 0 1-.215-.127l-6.426-6.445-6.426 6.445a.846.846 0 0 1-.215.127.596.596 0 0 1-.468 0 .846.846 0 0 1-.215-.127.65.65 0 0 1-.176-.449c0-.169.059-.318.176-.449l6.445-6.426-6.445-6.426a.65.65 0 0 1-.176-.449c0-.169.059-.318.176-.449a.652.652 0 0 1 .449-.176c.169 0 .319.059.449.176l6.426 6.445 6.426-6.445a.652.652 0 0 1 .449-.176c.169 0 .319.059.449.176.117.13.176.28.176.449z" />
-									</svg>
-								</i>
-							</div>
-							<form class="position-relative d-flex align-items-center pb-5 pb-lg-15 mb-0 border-bottom" action="/search" method="get" role="search">
-								<input type="search" class="border-0 p-0 mb-0" name="q" id="Search" value="" placeholder="Search Products...">
-								<label class="position-absolute right-0 mb-0 mr-0 m-lg-0 cursor-pointer" for="Search"><i>
-										<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-168" viewBox="0 0 24 24">
-											<path d="M13.261 2.475a8.177 8.177 0 0 1 2.588 1.738 8.172 8.172 0 0 1 1.738 2.588 7.97 7.97 0 0 1 .635 3.164 7.836 7.836 0 0 1-.527 2.861 8.355 8.355 0 0 1-1.426 2.412l4.902 4.902c.117.131.176.28.176.449s-.059.319-.176.449c-.065.052-.137.095-.215.127s-.156.049-.234.049-.156-.017-.234-.049-.149-.075-.215-.127l-4.902-4.902c-.703.6-1.507 1.074-2.412 1.426s-1.859.528-2.862.528a7.945 7.945 0 0 1-3.164-.635 8.144 8.144 0 0 1-2.588-1.738 8.15 8.15 0 0 1-1.738-2.588 7.962 7.962 0 0 1-.635-3.164 7.97 7.97 0 0 1 .635-3.164 8.172 8.172 0 0 1 1.738-2.588 8.15 8.15 0 0 1 2.588-1.738c.989-.423 2.044-.635 3.164-.635s2.174.212 3.164.635zM3.759 12.641c.358.834.85 1.563 1.475 2.188s1.354 1.117 2.188 1.475c.833.358 1.726.537 2.676.537s1.843-.179 2.676-.537c.833-.357 1.563-.85 2.188-1.475s1.116-1.354 1.475-2.188a6.705 6.705 0 0 0 .537-2.676c0-.95-.179-1.842-.537-2.676-.358-.833-.85-1.563-1.475-2.188s-1.354-1.116-2.188-1.475c-.835-.356-1.727-.536-2.677-.536s-1.843.18-2.676.537c-.833.358-1.563.85-2.188 1.475S4.117 6.456 3.759 7.289a6.694 6.694 0 0 0-.537 2.676c0 .951.178 1.843.537 2.676z" />
-										</svg>
-									</i></label>
-							</form>
-							<div class="search__content">
-								<div class="search__result row pt-10 pt-lg-0 mt-20 mt-lg-30 d-none-important"></div>
-								<div class="search__view-all pb-20 pb-lg-0 mt-20 mt-lg-10 d-none-important">
-									<a href="search.html" class="btn-link">View all products</a>
-								</div>
-							</div>
-							<p class="search__empty pb-20 pb-lg-0 mt-20 mt-lg-30 mb-0 d-none-important">Empty result</p>
-						</div>
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:search.title", 
+							"sh_top_search", 
+							array(
+								"CATEGORY_0" => array(
+								),
+								"CATEGORY_0_TITLE" => "",
+								"CHECK_DATES" => "N",
+								"CONTAINER_ID" => "title-search",
+								"INPUT_ID" => "title-search-input",
+								"NUM_CATEGORIES" => "",
+								"ORDER" => "date",
+								"PAGE" => "#SITE_DIR#search/index.php",
+								"SHOW_INPUT" => "Y",
+								"SHOW_OTHERS" => "N",
+								"TOP_COUNT" => "5",
+								"USE_LANGUAGE_GUESS" => "Y",
+								"COMPONENT_TEMPLATE" => "sh_top_search"
+							),
+							false
+						);?>
 					</div>
 					<div class="popup-navigation__menu d-lg-none py-25 px-10" data-js-menu-mobile>
 						<div class="container" data-js-position-mobile="menu"></div>
@@ -974,89 +970,35 @@
 				</div>
 			</div>
 			<div class="popup__body position-relative d-none justify-content-end" data-js-popup-name="cart" data-popup-right data-js-popup-ajax>
-				<div class="popup-cart py-25 px-20 js-popup-cart-ajax" data-popup-content>
-					<div class="popup-cart__head d-flex align-items-center">
-						<h5 class="m-0">MY BAG <span data-js-popup-cart-count>(3)</span></h5>
-						<i class="popup-cart__close ml-auto cursor-pointer" data-js-popup-close>
-							<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-164" viewBox="0 0 24 24">
-								<path d="M19.583 4.965a.65.65 0 0 1-.176.449l-6.445 6.426 6.445 6.426c.117.131.176.28.176.449a.65.65 0 0 1-.176.449.846.846 0 0 1-.215.127.596.596 0 0 1-.468 0 .846.846 0 0 1-.215-.127l-6.426-6.445-6.426 6.445a.846.846 0 0 1-.215.127.596.596 0 0 1-.468 0 .846.846 0 0 1-.215-.127.65.65 0 0 1-.176-.449c0-.169.059-.318.176-.449l6.445-6.426-6.445-6.426a.65.65 0 0 1-.176-.449c0-.169.059-.318.176-.449a.652.652 0 0 1 .449-.176c.169 0 .319.059.449.176l6.426 6.445 6.426-6.445a.652.652 0 0 1 .449-.176c.169 0 .319.059.449.176.117.13.176.28.176.449z" />
-							</svg>
-						</i>
-					</div>
-					<div class="popup-cart__content">
-						<div class="popup-cart__items mt-15 border-bottom">
-							<div>
-								<div class="product-cart d-flex flex-row align-items-start mb-20" data-js-product="" data-product-variant-id="13519954018356">
-									<div class="product-cart__image mr-15"><a href="product.html" class="d-block"> <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/products/2121900600_1_1_1_71822fdd-d42c-4fd2-8a9e-0c48d67a8629_120x.jpg 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/products/2121900600_1_1_1_71822fdd-d42c-4fd2-8a9e-0c48d67a8629_240x.jpg 2x" alt="title">
-										</a></div>
-									<div class="product-cart__content d-flex flex-column align-items-start">
-										<div class="product-cart__title mb-3">
-											<h3 class="h6 m-0"><a href="product.html">Jersey Graphic
-													Tee Dolce</a></h3>
-										</div>
-										<div class="product-cart__variant">LightPink / XS</div>
-										<div class="product-cart__price mt-10 mb-10"><span class="product-cart__quantity">1</span> <span>x</span> <span class="price" data-wg-notranslate="manual"><span><span class="money" data-currency-usd="$330.00" data-currency="USD" data-wg-notranslate="manual">$330.00</span></span></span></div>
-										<a href="/cart/change?line=1&amp;amp;quantity=0" class="product-cart__remove btn-link js-product-button-remove-from-cart">Remove</a>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="product-cart d-flex flex-row align-items-start mb-20" data-js-product="" data-product-variant-id="13519945957428">
-									<div class="product-cart__image mr-15"><a href="product.html" class="d-block"> <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/products/0051019250_2_2_1_8d106a53-79e8-4347-91cf-b5fc6239bd87_120x.jpg 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/products/0051019250_2_2_1_8d106a53-79e8-4347-91cf-b5fc6239bd87_240x.jpg 2x" alt="title">
-										</a></div>
-									<div class="product-cart__content d-flex flex-column align-items-start">
-										<div class="product-cart__title mb-3">
-											<h3 class="h6 m-0"><a href="product.html">Skinny
-													mid-rise trousers</a></h3>
-										</div>
-										<div class="product-cart__variant">White / XS</div>
-										<div class="product-cart__price mt-10 mb-10"><span class="product-cart__quantity">1</span> <span>x</span> <span class="price" data-wg-notranslate="manual"><span><span class="money" data-currency-usd="$171.00" data-currency="USD" data-wg-notranslate="manual">$171.00</span></span></span></div>
-										<a href="other-cart.html" class="product-cart__remove btn-link js-product-button-remove-from-cart">Remove</a>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="product-cart d-flex flex-row align-items-start mb-20" data-js-product="" data-product-variant-id="13793281441844">
-									<div class="product-cart__image mr-15"><a href="product.html" class="d-block">
-											<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/products/0047628250_1_1_1_1a617acf-fddc-4eca-b0d3-7bf75c86352e_120x.jpg 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/products/0047628250_1_1_1_1a617acf-fddc-4eca-b0d3-7bf75c86352e_240x.jpg 2x" alt="title">
-										</a></div>
-									<div class="product-cart__content d-flex flex-column align-items-start">
-										<div class="product-cart__title mb-3">
-											<h3 class="h6 m-0"><a href="product.html">Belted chino
-													trousers polo</a></h3>
-										</div>
-										<div class="product-cart__variant">White / 30</div>
-										<div class="product-cart__price mt-10 mb-10"><span class="product-cart__quantity">1</span> <span>x</span> <span class="price" data-wg-notranslate="manual"><span><span class="money" data-currency-usd="$320.00" data-currency="USD" data-wg-notranslate="manual">$320.00</span></span></span></div>
-										<a href="other-cart.html" class="product-cart__remove btn-link js-product-button-remove-from-cart">Remove</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="popup-cart__subtotal h5 d-flex align-items-center mt-15 mb-0">
-							<p class="m-0">SUBTOTAL: $821</p>
-							<span class="ml-auto">
-								<span class="price" data-js-popup-cart-subtotal></span>
-							</span>
-						</div>
-						<div class="popup-cart__free-shipping my-20">
-							<div class="free-shipping position-relative px-6 py-3 text-lg-left js-free-shipping" data-value="20000">
-								<div class="free-shipping__progress position-absolute top-0 left-0 h-100" data-js-progress style="width: 100.0%;"></div>
-								<div class="free-shipping__text position-relative">
-									<i class="mr-3">
-										<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-127" viewBox="0 0 24 24">
-											<path d="M21.648 12.672c.104.052.188.13.254.234a.62.62 0 0 1 .098.332v5a.602.602 0 0 1-.186.439.601.601 0 0 1-.439.186h-2.559a3.043 3.043 0 0 1-1.074 1.787 3.03 3.03 0 0 1-1.992.713c-.756 0-1.42-.238-1.992-.713a3.028 3.028 0 0 1-1.074-1.787h-1.309a.597.597 0 0 1-.439-.186.6.6 0 0 1-.186-.439V4.488H2.625a.597.597 0 0 1-.439-.186A.597.597 0 0 1 2 3.863a.6.6 0 0 1 .186-.439.597.597 0 0 1 .439-.186h8.75a.6.6 0 0 1 .439.186c.123.124.186.27.186.439v2.5h5a.614.614 0 0 1 .586.41l1.797 4.766 2.265 1.133zM9.314 9.674c.123.124.186.27.186.439a.602.602 0 0 1-.186.439.601.601 0 0 1-.439.186h-3.75a.597.597 0 0 1-.439-.186.597.597 0 0 1-.186-.439.6.6 0 0 1 .186-.439.598.598 0 0 1 .439-.186h3.75a.6.6 0 0 1 .439.186zm0 3.125c.123.124.186.27.186.439a.602.602 0 0 1-.186.439.601.601 0 0 1-.439.186h-2.5a.597.597 0 0 1-.439-.186.6.6 0 0 1-.186-.439.6.6 0 0 1 .186-.439.598.598 0 0 1 .439-.186h2.5a.6.6 0 0 1 .439.186zm11.436 4.814v-3.984l-2.148-1.074a.635.635 0 0 1-.195-.146.557.557 0 0 1-.117-.205l-1.719-4.59H12v10h.684a3.033 3.033 0 0 1 1.074-1.787 3.026 3.026 0 0 1 1.992-.713 3.03 3.03 0 0 1 1.992.713 3.041 3.041 0 0 1 1.074 1.787h1.934zm-3.936-6.064c.123.124.186.27.186.439a.602.602 0 0 1-.186.439.601.601 0 0 1-.439.186h-2.5a.597.597 0 0 1-.439-.186.6.6 0 0 1-.186-.439v-2.5a.6.6 0 0 1 .186-.439.598.598 0 0 1 .439-.186.6.6 0 0 1 .439.186c.123.124.186.27.186.439v1.875h1.875a.6.6 0 0 1 .439.186zm.264 8.017a1.81 1.81 0 0 0 .547-1.328 1.81 1.81 0 0 0-.547-1.328 1.812 1.812 0 0 0-1.328-.547 1.81 1.81 0 0 0-1.328.547 1.808 1.808 0 0 0-.547 1.328c0 .521.182.964.547 1.328.364.365.807.547 1.328.547s.963-.182 1.328-.547z" />
-										</svg>
-									</i> <span data-js-text>Free Shipping</span>
-								</div>
-							</div>
-						</div>
-						<div class="popup-cart__buttons mt-15">
-							<a href="checkout.html" class="btn btn--full btn--secondary">PROCEED TO CHECKOUT</a>
-							<a href="other-cart.html" class="btn btn--full mt-20">VIEW SHOPPING BAG</a>
-						</div>
-					</div>
-					<div class="popup-cart__empty mt-20 d-none-important">Your shopping bag is empty.</div>
-				</div>
+				<?$APPLICATION->IncludeComponent(
+					"bitrix:sale.basket.basket.line", 
+					"cart_popup", 
+					array(
+						"HIDE_ON_BASKET_PAGES" => "N",
+						"PATH_TO_AUTHORIZE" => "/hasta/personal/auth/",
+						"PATH_TO_BASKET" => "/hasta/personal/cart/",
+						"PATH_TO_ORDER" => "/hasta/personal/order_make/",
+						"PATH_TO_PERSONAL" => "/hasta/personal/",
+						"PATH_TO_PROFILE" => "/hasta/personal/",
+						"PATH_TO_REGISTER" => "/hasta/personal/auth/registration.php",
+						"POSITION_FIXED" => "N",
+						"SHOW_AUTHOR" => "Y",
+						"SHOW_DELAY" => "N",
+						"SHOW_EMPTY_VALUES" => "Y",
+						"SHOW_IMAGE" => "Y",
+						"SHOW_NOTAVAIL" => "N",
+						"SHOW_NUM_PRODUCTS" => "Y",
+						"SHOW_PERSONAL_LINK" => "Y",
+						"SHOW_PRICE" => "Y",
+						"SHOW_PRODUCTS" => "Y",
+						"SHOW_REGISTRATION" => "Y",
+						"SHOW_SUMMARY" => "Y",
+						"SHOW_TOTAL_PRICE" => "Y",
+						"COMPONENT_TEMPLATE" => "store_v3_inline",
+						"MAX_IMAGE_SIZE" => "70"
+					),
+					false
+				);?>
 			</div>
 			<div class="popup__body position-relative d-none justify-content-end" data-js-popup-name="wishlist" data-popup-right data-js-popup-ajax>
 				<div class="popup-wishlist py-25 px-20" data-popup-content>

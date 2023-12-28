@@ -38,7 +38,7 @@ $arrFilter = [
 	<div class="row">
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section", 
-	"catalog_grid", 
+	"mp_goods_list", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "MORE_PHOTO",
@@ -153,7 +153,7 @@ $arrFilter = [
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
-		"COMPONENT_TEMPLATE" => "catalog_grid",
+		"COMPONENT_TEMPLATE" => "mp_goods_list",
 		"OFFER_ADD_PICT_PROP" => "-",
 		"DISCOUNT_PERCENT_POSITION" => "bottom-right",
 		"SEF_RULE" => "",

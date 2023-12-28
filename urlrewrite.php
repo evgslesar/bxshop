@@ -16,6 +16,14 @@ $arUrlRewrite=array (
     'PATH' => '/personal/orders_history/index.php',
     'SORT' => 100,
   ),
+  12 => 
+  array (
+    'CONDITION' => '#^/hasta/goods/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/hasta/goods/index.php',
+    'SORT' => 100,
+  ),
   11 => 
   array (
     'CONDITION' => '#^\\??(.*)#',

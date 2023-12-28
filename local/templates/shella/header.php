@@ -490,17 +490,29 @@ $CurUri = $APPLICATION->GetCurUri();
 										<span class="header__counter" data-js-compare-count="0">0</span>
 									</a>
 								</div>
-								<div class="ml-25 ml-lg-15">
-									<a href="/cart" class="header__btn-cart position-relative d-flex align-items-center text-nowrap js-popup-button" data-js-popup-button="cart" data-js-sticky-replace-element="cart">
-										<i class="mr-lg-7">
-											<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-109" viewBox="0 0 24 24">
-												<path d="M19.884 21.897a.601.601 0 0 1-.439.186h-15a.6.6 0 0 1-.439-.186.601.601 0 0 1-.186-.439v-15a.6.6 0 0 1 .186-.439.601.601 0 0 1 .439-.186h3.75c0-1.028.368-1.911 1.104-2.646.735-.735 1.618-1.104 2.646-1.104s1.911.368 2.646 1.104c.735.736 1.104 1.618 1.104 2.646h3.75a.6.6 0 0 1 .439.186.601.601 0 0 1 .186.439v15a.604.604 0 0 1-.186.439zM18.819 7.083h-3.125v2.5a.598.598 0 0 1-.186.439c-.124.124-.271.186-.439.186s-.315-.062-.439-.186a.6.6 0 0 1-.186-.439v-2.5h-5v2.5a.598.598 0 0 1-.186.439c-.124.124-.271.186-.439.186s-.315-.062-.439-.186a.6.6 0 0 1-.186-.439v-2.5H5.069v13.75h13.75V7.083zm-8.642-3.018a2.409 2.409 0 0 0-.733 1.768h5c0-.69-.244-1.279-.732-1.768s-1.077-.732-1.768-.732-1.279.244-1.767.732z" />
-											</svg>
-										</i>
-										<span class="d-none d-lg-inline mt-lg-3" data-js-cart-count-desktop="0">Bag (0)</span>
-										<span class="header__counter d-lg-none" data-js-cart-count-mobile="0">0</span>
-									</a>
-								</div>
+								<?$APPLICATION->IncludeComponent(
+	"bitrix:sale.basket.basket.line", 
+	"top_cart_inline", 
+	array(
+		"HIDE_ON_BASKET_PAGES" => "N",
+		"PATH_TO_AUTHORIZE" => "",
+		"PATH_TO_BASKET" => "/hasta/personal/cart/",
+		"PATH_TO_ORDER" => "/hasta/personal/order_make/",
+		"PATH_TO_PERSONAL" => "/hasta/personal/",
+		"PATH_TO_PROFILE" => "/hasta/personal/",
+		"PATH_TO_REGISTER" => "/hasta/personal/auth/",
+		"POSITION_FIXED" => "N",
+		"SHOW_AUTHOR" => "N",
+		"SHOW_EMPTY_VALUES" => "Y",
+		"SHOW_NUM_PRODUCTS" => "Y",
+		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_PRODUCTS" => "N",
+		"SHOW_REGISTRATION" => "N",
+		"SHOW_TOTAL_PRICE" => "N",
+		"COMPONENT_TEMPLATE" => "top_cart_inline"
+	),
+	false
+);?>
 								<div class="position-lg-relative d-none d-lg-block ml-lg-15" data-js-position-desktop="currencies">
 									<div class="js-position js-dropdown js-currencies-list" data-js-position-name="currencies">
 										<div class="header__btn-currency position-relative d-none d-lg-flex align-items-lg-center cursor-pointer" data-js-dropdown-button>
@@ -565,7 +577,7 @@ $CurUri = $APPLICATION->GetCurUri();
 									false
 								);?>
 								<a href="/search" class="header__btn-search d-none d-lg-flex align-items-lg-center ml-lg-auto js-popup-button" data-js-popup-button="navigation">
-									<span class="mr-lg-7">SEARCH</span>
+									<span class="mr-lg-7">ПОИСК</span>
 									<i>
 										<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-theme-168" viewBox="0 0 24 24">
 											<path d="M13.261 2.475a8.177 8.177 0 0 1 2.588 1.738 8.172 8.172 0 0 1 1.738 2.588 7.97 7.97 0 0 1 .635 3.164 7.836 7.836 0 0 1-.527 2.861 8.355 8.355 0 0 1-1.426 2.412l4.902 4.902c.117.131.176.28.176.449s-.059.319-.176.449c-.065.052-.137.095-.215.127s-.156.049-.234.049-.156-.017-.234-.049-.149-.075-.215-.127l-4.902-4.902c-.703.6-1.507 1.074-2.412 1.426s-1.859.528-2.862.528a7.945 7.945 0 0 1-3.164-.635 8.144 8.144 0 0 1-2.588-1.738 8.15 8.15 0 0 1-1.738-2.588 7.962 7.962 0 0 1-.635-3.164 7.97 7.97 0 0 1 .635-3.164 8.172 8.172 0 0 1 1.738-2.588 8.15 8.15 0 0 1 2.588-1.738c.989-.423 2.044-.635 3.164-.635s2.174.212 3.164.635zM3.759 12.641c.358.834.85 1.563 1.475 2.188s1.354 1.117 2.188 1.475c.833.358 1.726.537 2.676.537s1.843-.179 2.676-.537c.833-.357 1.563-.85 2.188-1.475s1.116-1.354 1.475-2.188a6.705 6.705 0 0 0 .537-2.676c0-.95-.179-1.842-.537-2.676-.358-.833-.85-1.563-1.475-2.188s-1.354-1.116-2.188-1.475c-.835-.356-1.727-.536-2.677-.536s-1.843.18-2.676.537c-.833.358-1.563.85-2.188 1.475S4.117 6.456 3.759 7.289a6.694 6.694 0 0 0-.537 2.676c0 .951.178 1.843.537 2.676z" />
@@ -617,129 +629,24 @@ $CurUri = $APPLICATION->GetCurUri();
 		</div>
 		<?php else: ?>
 		<!-- BEGIN content_for_index -->
-		<div id="theme-section-1551852751059" class="theme-section">
-			<div data-section-id="1551852751059" data-section-type="home-builder">
-
-				<div>
-					<div class="row mt-0 mb-10 mb-sm-45 mb-md-45 mb-lg-60 mb-xl-60 justify-content-start align-items-start">
-						<div class="col-12 col-md-12 mt-0 mb-0">
-							<div class="slider position-relative">
-								<div class="slider__slick" data-js-slider-slick data-arrows="false" data-bullets="true" data-speed="7">
-									<div class="slider__slide">
-
-
-										<div class="promobox promobox--type-07 promobox--is-slider position-relative d-flex flex-column align-items-center text-center overflow-hidden">
-											<div class="image-animation-trigger w-100">
-												<div class="w-100">
-
-													<div class="image-animation image-animation--from-default image-animation--to-default">
-														<div class="rimage" style=" min-height: 550px;">
-															<div class="d-sm-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-sm-block d-md-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-md-block d-lg-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-lg-block d-xl-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-xl-block" style="padding-top: 550px;"></div>
-															<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="rimage__img rimage__img--cover rimage__img--fade-in lazyload" data-master="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/62_4ca89f60-a457-447c-ae7f-caf6d8e7d246_{width}x.progressive.png.jpg?v=1552397961" data-aspect-ratio="3.4909090909090907" data-srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/62_4ca89f60-a457-447c-ae7f-caf6d8e7d246_900x.progressive.png.jpg?v=1552397961 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/files/62_4ca89f60-a457-447c-ae7f-caf6d8e7d246_900x@2x.progressive.png.jpg?v=1552397961 2x" alt="">
-														</div>
-													</div>
-												</div>
-												<div class="promobox__content promobox__content--animation-scale-in absolute-stretch d-flex flex-column flex-center px-15 py-7 overflow-hidden">
-													<div class="promobox__content_inner position-absolute d-flex flex-column flex-center w-100" style="max-width: 650px;margin-top: -10px;">
-
-														<div class="promo-text promo-text--width-01 mx-auto">
-															<p class="h1 mb-15">FINAL<br> CLEARANCE</p>
-															<p class="h4 mb-25">Take 20% Off ‘Sale Must-Haves'</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="slider__slide">
-
-
-										<div class="promobox promobox--type-07 promobox--is-slider position-relative d-flex flex-column align-items-center text-center overflow-hidden">
-											<div class="image-animation-trigger w-100">
-												<div class="w-100">
-
-													<div class="image-animation image-animation--from-default image-animation--to-default">
-														<div class="rimage" style=" min-height: 550px;">
-															<div class="d-sm-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-sm-block d-md-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-md-block d-lg-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-lg-block d-xl-none" style="padding-top: 550px;"></div>
-															<div class="d-none d-xl-block" style="padding-top: 550px;"></div>
-															<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="rimage__img rimage__img--cover rimage__img--fade-in lazyload" data-master="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/41_79d10fee-0490-47a9-9c53-c48378ec183f_{width}x.progressive.png.jpg?v=1552394543" data-aspect-ratio="3.4909090909090907" data-srcset="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/41_79d10fee-0490-47a9-9c53-c48378ec183f_900x.progressive.png.jpg?v=1552394543 1x, https://cdn.shopify.com/s/files/1/0026/2910/7764/files/41_79d10fee-0490-47a9-9c53-c48378ec183f_900x@2x.progressive.png.jpg?v=1552394543 2x" alt="">
-														</div>
-													</div>
-												</div>
-												<div class="promobox__content promobox__content--animation-scale-in absolute-stretch d-flex flex-column flex-center px-15 py-7 overflow-hidden">
-													<div class="promobox__content_inner position-absolute d-flex flex-column flex-center w-100" style="max-width: 600px;margin-top: -10px;">
-
-														<div class="promo-text mx-auto">
-															<p class="h1 mb-15 colorize-theme2-c">THIS JUST IN</p>
-															<p class="mb-25 h4 colorize-theme2-c">Hundreds Of New Spring
-																Arrivals, Featuring On-Trend Matching Sets For Her And
-																Breezy, Spring-Infused Prints For Him.</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="slider__slide">
-
-
-										<div class="promobox promobox--type-07 promobox--is-slider position-relative d-flex flex-column align-items-center text-center overflow-hidden">
-											<div class="image-animation-trigger w-100">
-												<div class="w-100">
-
-													<div class="rvideo" style=" min-height: 550px;">
-														<div class="d-sm-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-sm-block d-md-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-md-block d-lg-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-lg-block d-xl-none" style="padding-top: 550px;"></div>
-														<div class="d-none d-xl-block" style="padding-top: 550px;"></div>
-														<video class="rvideo__video" muted playsinline autoplay loop preload="auto">
-															<source src="https://cdn.shopify.com/s/files/1/0026/2910/7764/files/Untitled_Project_1.mp4?2792836601618417146" type="video/mp4">
-															Your browser does not support the video tag.
-														</video>
-													</div>
-												</div>
-												<div class="promobox__content promobox__content--animation-scale-in absolute-stretch d-flex flex-column flex-center px-15 py-7 overflow-hidden">
-													<div class="promobox__content_inner position-absolute d-flex flex-column flex-center w-100" style="max-width: 600px;margin-top: -10px;">
-
-														<div class="promo-text mx-auto">
-															<p class="h1 mb-15 colorize-theme2-c">70% OFF</p>
-															<p class="mb-25 h4 colorize-theme2-c">Hundreds Of New Spring
-																Arrivals, Featuring On-Trend Matching Sets For Her And
-																Breezy, Spring-Infused Prints For Him.</p>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<script>
-				Loader.require({
-					type: "script",
-					name: "home_builder"
-				});
-			</script>
-
-		</div>
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:news.line",
+			"sh_slider_on_main",
+			Array(
+				"ACTIVE_DATE_FORMAT" => "d.m.Y",
+				"CACHE_GROUPS" => "Y",
+				"CACHE_TIME" => "300",
+				"CACHE_TYPE" => "A",
+				"DETAIL_URL" => "",
+				"FIELD_CODE" => array(0=>"DETAIL_PICTURE",1=>"",),
+				"IBLOCKS" => array(0=>"27",),
+				"IBLOCK_TYPE" => "sales",
+				"NEWS_COUNT" => "4",
+				"SORT_BY1" => "ACTIVE_FROM",
+				"SORT_BY2" => "SORT",
+				"SORT_ORDER1" => "DESC",
+				"SORT_ORDER2" => "ASC"
+			)
+		);?>
 		<?php endif; ?>
 

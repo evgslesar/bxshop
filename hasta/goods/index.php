@@ -80,7 +80,7 @@ $APPLICATION->SetTitle("Каталог");
 		"DETAIL_VK_USE" => "N",
 		"DETAIL_VOTE_DISPLAY_AS_RATING" => "vote_avg",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_FIELD2" => "id",
@@ -112,15 +112,15 @@ $APPLICATION->SetTitle("Каталог");
 		"GIFTS_SHOW_OLD_PRICE" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "18",
+		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"INSTANT_RELOAD" => "Y",
+		"INSTANT_RELOAD" => "N",
 		"LABEL_PROP" => array(
 		),
 		"LABEL_PROP_MOBILE" => "",
 		"LABEL_PROP_POSITION" => "top-left",
-		"LAZY_LOAD" => "N",
+		"LAZY_LOAD" => "Y",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
 		"LINK_IBLOCK_ID" => "",
@@ -195,7 +195,7 @@ $APPLICATION->SetTitle("Каталог");
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/hasta/goods/",
-		"SEF_MODE" => "N",
+		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -260,12 +260,22 @@ $APPLICATION->SetTitle("Каталог");
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_STORE" => "Y",
 		"COMPONENT_TEMPLATE" => "sh_catalog",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => "",
-		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => "",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
+		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => array(
+		),
 		"DISCOUNT_PERCENT_POSITION" => "bottom-right",
+		"SEF_URL_TEMPLATES" => array(
+			"sections" => "",
+			"section" => "#SECTION_CODE_PATH#/",
+			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+			"compare" => "compare.php?action=#ACTION_CODE#",
+			"smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/",
+		),
 		"VARIABLE_ALIASES" => array(
-			"ELEMENT_ID" => "ELEMENT_ID",
-			"SECTION_ID" => "SECTION_ID",
+			"compare" => array(
+				"ACTION_CODE" => "action",
+			),
 		)
 	),
 	false

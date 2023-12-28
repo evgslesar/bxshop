@@ -8,7 +8,7 @@
 	{
 		BasketButton.superclass.constructor.apply(this, arguments);
 		this.buttonNode = BX.create('SPAN', {
-			props: {className: 'btn btn-default btn-buy btn-sm', id: this.id},
+			props: {className: 'btn', id: this.id},
 			style: typeof params.style === 'object' ? params.style : {},
 			text: params.text,
 			events: this.contextEvents
@@ -2129,8 +2129,7 @@
 			}
 		},
 
-		selectOfferProp: function()
-		{
+		selectOfferProp: function () {
 			var i = 0,
 				strTreeValue = '',
 				arTreeItem = [],
@@ -2138,39 +2137,54 @@
 				target = BX.proxy_context,
 				smallCardItem;
 
-			if (target && target.hasAttribute('data-treevalue'))
-			{
+			if (target && target.hasAttribute('data-treevalue')) {
 				if (BX.hasClass(target, 'selected'))
 					return;
 
-				if (typeof document.activeElement === 'object')
-				{
+				if (typeof document.activeElement === 'object') {
 					document.activeElement.blur();
 				}
+
+				// start CUSTOM
+				var skuId = this.offers[this.offerNum]['ID'];
+				// end CUSTOM
 
 				strTreeValue = target.getAttribute('data-treevalue');
 				arTreeItem = strTreeValue.split('_');
 				this.searchOfferPropIndex(arTreeItem[0], arTreeItem[1]);
-				rowItems = BX.findChildren(target.parentNode, {tagName: 'li'}, false);
 
-				if (rowItems && rowItems.length)
-				{
-					for (i = 0; i < rowItems.length; i++)
-					{
+				rowItems = BX.findChildren(target.parentNode, {
+					tagName: 'li'
+				}, false);
+
+				if (rowItems && rowItems.length) {
+					for (i = 0; i < rowItems.length; i++) {
 						BX.removeClass(rowItems[i], 'selected');
 					}
+					// start CUSTOM
+					var currentUrl = window.location.href;
+					var newUrl = currentUrl.replace('?offer=' + skuId, '');
+					window.history.replaceState(null, null, newUrl);
+					// end CUSTOM
 				}
 
 				BX.addClass(target, 'selected');
 
-				if (this.smallCardNodes.panel)
-				{
+				// start CUSTOM
+				var skuId = this.offers[this.offerNum]['ID'];
+				var newUrl = window.location.pathname + '?offer=' + skuId;
+				window.history.pushState('', '', newUrl);
+
+				// console.log(JSON.stringify(this.offers))
+				// Смена h1
+				document.getElementById("pagetitle").innerHTML = this.offers[this.offerNum]['NAME'];
+				// end CUSTOM
+
+				if (this.smallCardNodes.panel) {
 					smallCardItem = this.smallCardNodes.panel.querySelector('[data-treevalue="' + strTreeValue + '"]');
-					if (smallCardItem)
-					{
+					if (smallCardItem) {
 						rowItems = this.smallCardNodes.panel.querySelectorAll('[data-sku-line="' + smallCardItem.getAttribute('data-sku-line') + '"]');
-						for (i = 0; i < rowItems.length; i++)
-						{
+						for (i = 0; i < rowItems.length; i++) {
 							rowItems[i].style.display = 'none';
 						}
 
@@ -2179,14 +2193,12 @@
 				}
 
 				if (
-					this.isFacebookConversionCustomizeProductEventEnabled
-					&& BX.Type.isArrayFilled(this.offers)
-					&& BX.Type.isObject(this.offers[this.offerNum])
-				)
-				{
+					this.isFacebookConversionCustomizeProductEventEnabled &&
+					BX.Type.isArrayFilled(this.offers) &&
+					BX.Type.isObject(this.offers[this.offerNum])
+				) {
 					BX.ajax.runAction(
-						'sale.facebookconversion.customizeProduct',
-						{
+						'sale.facebookconversion.customizeProduct', {
 							data: {
 								offerId: this.offers[this.offerNum]['ID']
 							}
@@ -3013,8 +3025,8 @@
 					{
 						BX.adjust(this.obPrice.total, {
 							html: BX.message('PRICE_TOTAL_PREFIX') + ' <strong>'
-							+ BX.Currency.currencyFormat(price.PRICE * this.obQuantity.value, price.CURRENCY, true)
-							+ '</strong>',
+								+ BX.Currency.currencyFormat(price.PRICE * this.obQuantity.value, price.CURRENCY, true)
+								+ '</strong>',
 							style: {display: ''}
 						});
 					}
@@ -3525,17 +3537,17 @@
 			if (this.obPopupWin)
 				return;
 
-			this.obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket_' + this.visual.ID, null, {
-				autoHide: false,
-				offsetLeft: 0,
-				offsetTop: 0,
-				overlay: true,
-				closeByEsc: true,
-				titleBar: true,
-				closeIcon: true,
-				contentColor: 'white',
-				className: this.config.templateTheme ? 'bx-' + this.config.templateTheme : ''
-			});
+			// this.obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket_' + this.visual.ID, null, {
+			// 	autoHide: false,
+			// 	offsetLeft: 0,
+			// 	offsetTop: 0,
+			// 	overlay: true,
+			// 	closeByEsc: true,
+			// 	titleBar: true,
+			// 	closeIcon: true,
+			// 	contentColor: 'white',
+			// 	className: this.config.templateTheme ? 'bx-' + this.config.templateTheme : ''
+			// });
 		},
 
 		incViewedCounter: function()

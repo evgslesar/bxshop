@@ -23,7 +23,10 @@ if($arResult["SHOW_SMS_FIELD"] == true)
 	CJSCore::Init('phone_auth');
 }
 ?>
-<div class="bx-auth-reg">
+<div class="register mb-60">
+	<div class="container">
+
+	<h1 class="h3 mt-30 mb-40 text-center"><?=GetMessage("AUTH_REGISTER")?></h1>
 
 <?if($USER->IsAuthorized()):?>
 
@@ -91,25 +94,25 @@ new BX.PhoneAuth({
 
 <?else:?>
 
-<form method="post" action="<?=POST_FORM_ACTION_URI?>" name="regform" enctype="multipart/form-data">
+
+<form method="post" action="<?=POST_FORM_ACTION_URI?>" name="regform" id="create_customer" accept-charset="UTF-8" enctype="multipart/form-data">
 <?
 if($arResult["BACKURL"] <> ''):
 ?>
 	<input type="hidden" name="backurl" value="<?=$arResult["BACKURL"]?>" />
 <?
 endif;
-?>
+?>	
+	<input type="hidden" name="form_type" value="create_customer"/>
+	<input type="hidden" name="utf8" value="✓"/>
 
-<?=GetMessage("AUTH_REGISTER")?>
+
 
 <?foreach ($arResult["SHOW_FIELDS"] as $FIELD):?>
 	<div>
 	<? if ($FIELD !== 'LOGIN') { ?>
-		<label>
-		<?= GetMessage("REGISTER_FIELD_" . $FIELD) ?>:
-		<? if ($arResult["REQUIRED_FIELDS_FLAGS"][$FIELD] == "Y"): ?>
-			<span class="starrequired">*</span>
-		<? endif ?>
+		<label class="<? if ($arResult["REQUIRED_FIELDS_FLAGS"][$FIELD] == "Y"){ echo 'label-required';} ?>">
+			<?= GetMessage("REGISTER_FIELD_" . $FIELD) ?>:
 		</label>
 	<? } ?>
 	<?
@@ -117,25 +120,38 @@ endif;
 	{
 		case "PASSWORD":
 			?>
-			<input size="30" type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" autocomplete="off" class="bx-auth-input" />
+			<input type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>"			
+						placeholder="Введите пароль" 
+						autocomplete="off"
+						required="required"/>
 
 			<?
 			break;
 		case "CONFIRM_PASSWORD":
-			?><input size="30" type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" autocomplete="off" /><?
+			?>
+			<input type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" 
+						placeholder="Повторите пароль" 
+						autocomplete="off"
+						required="required"/>			
+			<?
 			break;
 
 		default:
 			?>
 			<? if ($FIELD == 'EMAIL') { ?>
-			<input class="form-control" size="30" type="email" name="REGISTER[<?= $FIELD ?>]"
+			<input type="email" name="REGISTER[<?= $FIELD ?>]"
 				onkeyup="document.getElementById('login-field').value = this.value" 
-				value="<?= $arResult["VALUES"][$FIELD] ?>"/>
+				value="<?= $arResult["VALUES"][$FIELD] ?>"
+				spellcheck="false"
+				autocomplete="off"
+				autocapitalize="off" 
+				placeholder="Введите адрес эл. почты" 
+				required="required"/>
 			<? } elseif ($FIELD == 'LOGIN') { // Скрываем поле LOGIN ?>
 			<input id="login-field" size="30" type="text" style="display: none;" name="REGISTER[<?= $FIELD ?>]"
 				value="<?= $arResult["VALUES"][$FIELD] ?>"/>
 			<? } else { ?>
-			<input class="form-control" size="30" type="text" name="REGISTER[<?= $FIELD ?>]"
+			<input type="text" name="REGISTER[<?= $FIELD ?>]"
 				value="<?= $arResult["VALUES"][$FIELD] ?>"/>
 			<? } ?>
 		
@@ -153,17 +169,20 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 		<?=GetMessage("REGISTER_CAPTCHA_TITLE")?>
 
 		<input type="hidden" name="captcha_sid" value="<?=$arResult["CAPTCHA_CODE"]?>" />
-		<img src="/bitrix/tools/captcha.php?captcha_sid=<?=$arResult["CAPTCHA_CODE"]?>" width="180" height="40" alt="CAPTCHA" />
-				
-		<?=GetMessage("REGISTER_CAPTCHA_PROMT")?>:<span class="starrequired">*</span>
-		<input type="text" name="captcha_word" maxlength="50" value="" autocomplete="off" />
+		<img src="/bitrix/tools/captcha.php?captcha_sid=<?=$arResult["CAPTCHA_CODE"]?>" width="150" height="40" alt="CAPTCHA" />
+		<?=GetMessage("REGISTER_CAPTCHA_PROMT")?>:
+		<input style="margin-top: 10px;" type="text" name="captcha_word" maxlength="50" value="" autocomplete="off" />
 	<?
 }
 /* !CAPTCHA */
 ?>
-	<input type="submit" name="register_submit_button" value="<?=GetMessage("AUTH_REGISTER")?>" />
 
+	<div class="text-center">
+		<input type="submit" name="register_submit_button" value="<?=GetMessage("AUTH_REGISTER")?>" class="btn btn--full btn--secondary">
+		<a href="/hasta/goods/" class="h6 btn-link mt-20 mb-0">Вернуться в магазин</a>
+	</div>
 </form>
+
 
 <p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
 
@@ -172,4 +191,6 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 
 <?endif?>
+
+	</div>
 </div>

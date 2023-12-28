@@ -106,7 +106,7 @@ $APPLICATION->SetTitle("Интернет-магазин \"Shella\"");
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
-		"IBLOCK_ID" => "18",
+		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(

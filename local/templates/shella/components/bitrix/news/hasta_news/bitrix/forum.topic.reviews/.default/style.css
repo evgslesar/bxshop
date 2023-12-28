@@ -521,3 +521,97 @@ a.postFormAutosave {
 	margin-top: 5px;
 	z-index:2;
 }
+
+
+.sh-comments-section .sh-comments-list li {
+	padding: 15px 0;
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	width: 100%;
+}
+.sh-comments-section .sh-comments-list li .img-box {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.sh-comments-section .sh-comments-list li .img-box img {
+	height: 50px;
+	width: 50px;
+	object-fit: cover;
+}
+.sh-comments-section .sh-comments-list li .txt {
+	width: 100%;
+	line-height: 1.1;
+}
+.sh-comments-section .sh-comments-list li .txt h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	line-height: 1.1;
+	margin-bottom: 10px;
+}
+.sh-comments-section .sh-comments-list li .txt time {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+	font-size: 12px;
+	line-height: 1.1;
+}
+.sh-comments-section .entry-quote {
+	background-color: seashell;
+	margin-bottom: 10px;
+	margin-top: -15px;
+}
+.sh-comments-section table.forum-quote td, table.forum-code td {
+	padding: 0.2em 1em 0.2em;
+}
+
+.sh-comments-section .reviews-reply-buttons {
+	display: flex;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	gap: 15px;
+}
+.sh-comments-section .sh-leave-comment .comment-form .reviews-reply-buttons .form-btn {
+	padding: 5px 20px;
+	width: 140px;
+	height: 30px;
+	border: none;
+	background-color: #0f0652;
+	color: #fff;
+	cursor: pointer;
+}
+
+.sh-comments-section .form-group.reviews-reply-field.reviews-reply-field-captcha {
+	display: flex;
+	gap: 20px;
+}
+.sh-comments-section .form-group.reviews-reply-field.reviews-reply-field-captcha .reviews-reply-field-captcha-image img {
+	height: 70px;
+	width: 160px;
+	object-fit: contain;
+}
+.sh-comments-section .sh-leave-comment .comment-form .comment-form-header {
+	display: flex;
+	justify-content: space-between;
+}
+.sh-comments-section .sh-leave-comment .comment-form .comment-form-header .form-control {
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	width: 48%;
+	border: 1px solid #adadad;
+	border-radius: 5px;
+}
+.sh-comments-section .form-group.reviews-reply-field.reviews-reply-field-text {
+	border: 1px solid #adadad;
+	border-radius: 5px;
+}
+.sh-comments-section .form-group.reviews-reply-field.reviews-reply-field-text .bx-editor-iframe {
+	background-color: #fff;
+}
+.sh-comments-section .form-group.reviews-reply-field.reviews-reply-field-text .main-post-form-toolbar {
+	background-color: #fff;
+}
