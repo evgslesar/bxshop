@@ -2,6 +2,7 @@
 
 <!-- footer of the Page -->
             <footer id="mt-footer" class="style2 wow fadeInUp" data-wow-delay="0.4s">
+
 				<!-- F Promo Box of the Page -->
 				<aside class="f-promo-box dark">
 					<div class="container divider">

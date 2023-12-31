@@ -1,0 +1,14 @@
+.product-collection__button-add-to-compare .icon-added{
+	display: none;
+}
+.product-collection__button-add-to-compare input:checked ~ .icon-added{
+	display: block;
+}
+.product-collection__button-add-to-compare input:checked ~ .icon{
+	display: none;
+}
+.product-collection__button-add-to-compare input{
+	height: 1px;
+	width: 1px;
+	opacity: 0;
+}

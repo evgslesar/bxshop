@@ -65,7 +65,7 @@ $CurUri = $APPLICATION->GetCurUri();
 				<div class="mt-top-bar">
 					<div class="container">
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 hidden-xs">
+							<div class="col-xs-12 col-md-4 col-lg-6 hidden-xs">
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:main.include",
 									"",
@@ -88,7 +88,26 @@ $CurUri = $APPLICATION->GetCurUri();
 									)
 								);?>
 							</div>
-							<div class="col-xs-12 col-sm-6 text-right">
+							<div id="compare_list_count"  class="col-xs-6 col-md-3 col-lg-2 text-right">
+            				<?php $APPLICATION->IncludeComponent(
+								"bitrix:catalog.compare.list", 
+								"compare_top", 
+								array(
+							        "IBLOCK_TYPE" => "catalog", //Сюда ваш тип инфоблока каталога
+							        "IBLOCK_ID" => "18", //Сюда ваш ID инфоблока каталога
+							        "AJAX_MODE" => "N",
+							        "AJAX_OPTION_JUMP" => "N",
+							        "AJAX_OPTION_STYLE" => "Y",
+							        "AJAX_OPTION_HISTORY" => "N",
+							        "DETAIL_URL" => "#SECTION_CODE#",
+							        "COMPARE_URL" => "/catalog/compare.php",
+							        "NAME" => "CATALOG_COMPARE_LIST",
+							        "AJAX_OPTION_ADDITIONAL" => ""
+							 	),
+								false
+							); ?>	
+							</div>
+							<div class="col-xs-6 col-md-5 col-lg-4 text-right">
 							<?$APPLICATION->IncludeComponent(
 								"bitrix:menu", 
 								"top_auth_menu", 

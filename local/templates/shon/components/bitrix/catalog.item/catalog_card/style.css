@@ -145,3 +145,16 @@
 	right: 0;
 	left: auto;
   }
+
+  .compare-input-label{
+	cursor: pointer;
+  }
+
+  .compare-input{
+	height: 1px;
+	width: 1px;
+	opacity: 0;
+  }
+  .compare-input:checked ~ i{
+	color: #ff6060;
+  }

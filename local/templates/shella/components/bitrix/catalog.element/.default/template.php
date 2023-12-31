@@ -149,7 +149,7 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-' . $arParams['TEMPLATE_
                 <div class="product-item-detail-slider-container" id="<?= $itemIds['BIG_SLIDER_ID'] ?>">
                     <span data-entity="close-popup"></span>
                     <div class="product-item-detail-slider-block
-				<?= ($arParams['IMAGE_RESOLUTION'] === '1by1' ? 'product-item-detail-slider-block-square' : '') ?>"
+				        <?= ($arParams['IMAGE_RESOLUTION'] === '1by1' ? 'product-item-detail-slider-block-square' : '') ?>"
                          data-entity="images-slider-block">
                         <span class="product-item-detail-slider-left" data-entity="slider-control-left"
                               style="display: none;"></span>

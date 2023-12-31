@@ -24,6 +24,38 @@ use Bitrix\Catalog\ProductTable;
 
 $this->setFrameMode(true);
 // $this->addExternalCss('/bitrix/css/main/bootstrap.css');
+?>
+<script>
+	function compare_tov(id)
+	{
+	  var chek = document.getElementById('compareid_'+id);
+	    if (chek.checked)
+	        {
+	        //Добавить
+	        var AddedGoodId = id;
+	            $.get("/local/ajax/list_compare.php",
+	            { 
+	                action: "ADD_TO_COMPARE_LIST", id: AddedGoodId},
+	                function(data) {
+		        $("#compare_list_count").html(data);
+	        	}
+	        );
+	        }
+	    else
+	       {
+	        //Удалить
+	        var AddedGoodId = id;
+	            $.get("/local/ajax/list_compare.php",
+	            { 
+	                action: "DELETE_FROM_COMPARE_LIST", id: AddedGoodId},
+	                function(data) {
+		        $("#compare_list_count").html(data);
+	            }
+	            );
+	    }
+	}
+</script>
+<?
 
 if (!empty($arResult['NAV_RESULT']))
 {

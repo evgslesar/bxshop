@@ -6,10 +6,9 @@
  * @var array $templateData
  */
 
+
 // TODO Сделать нормально через res_mod
 // Получаем список торговых предложений товара
-
-
 
 $offerList = CIBlockPriceTools::GetOffersArray(
     array(
@@ -106,15 +105,15 @@ if ($arParams['DISPLAY_COMPARE'])
 		?>
 		<script>
 			BX.ready(BX.defer(function(){
-				if (!!window.<?=$templateData['JS_OBJ']?>) {
+				if (!!window.<?=$templateData['JS_OBJ']?>)
+				{
 					window.<?=$templateData['JS_OBJ']?>.setCompared('<?=$compared?>');
 
-					<? if (!empty($comparedIds)) { ?>
+					<? if (!empty($comparedIds)): ?>
 						window.<?=$templateData['JS_OBJ']?>.setCompareInfo(<?=CUtil::PhpToJSObject($comparedIds, false, true)?>);
-					<? } ?>
+					<? endif ?>
 				}
-			}
-        ))
+			}));
 		</script>
 		<?
 	}

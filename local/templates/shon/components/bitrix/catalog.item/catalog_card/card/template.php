@@ -207,7 +207,24 @@ use \Bitrix\Main\Localization\Loc;
                             <i class="icomoon icon-heart-empty"></i>
                         </button> -->
                     </li>
-                    <li><a href="#"><i class="icomoon icon-exchange"></i></a></li>
+                    <li>
+                        <label class="compare-input-label">
+                            <?
+                              $iblockid = $item['IBLOCK_ID'];
+                              $id=$item['ID'];
+                              if(isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id]))
+                              {
+                                $checked='checked';
+                              }
+                              else
+                              {
+                                $checked='';
+                              }
+                            ?>
+                            <input class="compare-input" <?=$checked;?> type="checkbox" id="compareid_<?=$item['ID'];?>" onchange="compare_tov(<?=$item['ID'];?>);">
+                            <i class="icomoon icon-exchange"></i>
+                        </label>
+                    </li>
                 </ul>
                 <div class="links-box">
                     <?
